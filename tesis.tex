@@ -1,0 +1,1091 @@
+\documentclass[12pt,a4paper]{report}
+
+% ==================== PACKAGE BAHASA ====================
+\usepackage[indonesian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% ==================== FONT ====================
+\usepackage{newtxtext,newtxmath}
+
+% ==================== HALAMAN ====================
+\usepackage[a4paper,margin=3cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% ==================== MATEMATIKA ====================
+\usepackage{amsmath}
+\usepackage{array}
+
+% ==================== GAMBAR ====================
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Caption rata tengah
+\captionsetup{
+justification=centering
+}
+
+% ==================== TABEL ====================
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+% ==================== FORMAT JUDUL ====================
+\usepackage{titlesec}
+
+% ==================== TOC ====================
+\usepackage{tocloft}
+
+% ==================== LIST ====================
+\usepackage{enumitem}
+
+% ==================== MICROTYPOGRAPHY ====================
+\usepackage{microtype}
+
+% ==================== NON-HYPHENATION ====================
+\usepackage[none]{hyphenat}
+
+% ==================== HYPERLINK ====================
+\usepackage[colorlinks=true,
+linkcolor=black,
+citecolor=black,
+urlcolor=blue]{hyperref}
+
+% ==================== BIBLIOGRAPHY ====================
+\usepackage[
+backend=biber,
+style=ieee,
+citestyle=numeric-comp,
+sorting=none,
+language=english,
+autolang=other
+]{biblatex}
+
+\renewcommand{\UrlFont}{\normalfont}
+
+\DeclareFieldFormat{doi}{
+doi: \href{https://doi.org/#1}{#1}
+}
+
+\DeclareFieldFormat{url}{
+\url{#1}
+}
+
+\DeclareFieldFormat{labelnumberwidth}{[#1]\space}
+
+\renewcommand*{\bibfont}{\normalfont}
+
+\addbibresource{sitasi.bib}
+
+% ==================== TIKZ ====================
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, fit, backgrounds}
+
+% ==================== FORMAT ====================
+\geometry{a4paper, left=4cm, right=3cm, top=3cm, bottom=3cm}
+\setstretch{1.5}
+
+% ==================== HYPERREF ====================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+    citecolor=black
+}
+
+% Chapter and section formatting
+\titleformat{\chapter}[display]
+  {\normalfont\fontsize{12}{14}\bfseries\centering}
+  {\chaptertitlename\ \thechapter}{0pt}{\fontsize{12}{14}\bfseries}
+\titlespacing*{\chapter}{0pt}{-30pt}{20pt}
+
+\titleformat{\section}
+  {\normalfont\fontsize{12}{14}\bfseries}
+  {\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+\titleformat{\subsection}
+  {\normalfont\fontsize{12}{14}\bfseries}
+  {\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{12pt}{6pt}
+
+% ==================== TIKZ STYLE ====================
+\tikzset{
+  startstop/.style={
+    rectangle, rounded corners=8pt,
+    minimum width=5.5cm, minimum height=1cm,
+    text centered, draw=black, fill=gray!20
+  },
+  process/.style={
+    rectangle,
+    minimum width=7cm, minimum height=1cm,
+    text centered, draw=black, fill=blue!8
+  },
+  decision/.style={
+    diamond,
+    aspect=2,
+    minimum width=5cm,
+    text centered,
+    draw=black,
+    fill=orange!15
+  },
+  arrow/.style={thick, ->, >=Stealth}
+}
+
+\sloppy
+
+% ==================== DOCUMENT ====================
+\begin{document}
+
+% ==================== SAMPUL ====================
+\begin{titlepage}
+    \centering
+    \fontsize{12}{14}\selectfont
+    
+    \textbf{PROPOSAL TESIS}\\[1cm]
+    
+\textbf{Pengaruh Variabilitas \textit{Madden--Julian Oscillation} (MJO)} \textbf{terhadap Fluks Radiasi, Suhu Efektif, dan Intensitas Efek Rumah Kaca di Wilayah Indonesia Tahun 2018--2021}
+    
+    \includegraphics[width=5cm]{logoum.png}\\[2cm]
+
+    \textbf{DISUSUN OLEH}\\[0.1cm]
+    \textbf{Aksamala Arfendi}\\
+    \textbf{NIM 250322826575}\\[1cm]
+    
+    \textbf{Fisika Komputasional dan Teoritik}\\[1.5cm]
+    
+    \textbf{DOSEN PEMBIMBING}\\[0.1cm]
+    \textbf{Dr. Hafizh Prihtiadi, S.Si., M.Si.\\
+    NIP 198804082024061001}\\[0.1cm]
+    
+    \textbf{Dr. Hari Wisodo, M.Si.\\
+    NIP 197307241998031001}\\[1cm]
+
+    \vfill
+
+    \textbf{UNIVERSITAS NEGERI MALANG\\
+    FAKULTAS MATEMATIKA DAN ILMU PENGETAHUAN ALAM\\
+    PROGRAM STUDI S2 FISIKA\\
+    JUNI 2026}
+\end{titlepage}
+
+
+% ==================== DAFTAR ====================
+\tableofcontents
+\newpage
+
+\listoffigures
+\newpage
+
+\listoftables
+\newpage
+
+% ==================== BAB 1 ====================
+\chapter{PENDAHULUAN}
+
+\section{Latar Belakang}
+
+\textit{Madden-Julian Oscillation} (MJO) adalah mode dominan variabilitas atmosfer tropis pada skala intraseasonal, propagasi ke arah timur dari anomali konveksi dan sirkulasi atmosfer dengan periode 30–60 hari \cite{Zhang2017,Jiang2020}. Fenomena ini termanifestasi melalui pola skala besar dan propagasi aktivitas konvektif yang disertai anomali sirkulasi, sehingga memberikan kontribusi signifikan terhadap variabilitas cuaca di wilayah tropis maupun global \cite{Skinner2018}.Pengaruh MJO mencakup berbagai proses atmosfer, termasuk modulasi curah hujan tropis, sirkulasi monsun Asia dan Australia, pembentukan siklon tropis, serta kejadian cuaca ekstrem di berbagai wilayah dunia \cite{Auniyar2011}. 
+
+Indonesia, yang terletak di kawasan \textit{Maritime Continent} (MC), mengalami dampak yang sangat kuat dari MJO karena wilayah ini merupakan pusat utama konveksi tropis global yang dibentuk oleh interaksi kompleks antara atmosfer, laut, dan daratan \cite{Matthews2016}.Kawasan MC tidak hanya berperan sebagai wilayah penguatan konveksi MJO, tetapi juga sebagai penghalang utama terhadap propagasi MJO ke arah timur \cite{Ling2025ERL}. Kompleksitas topografi serta kontras termal darat-laut yang kuat sering kali menyebabkan pelemahan atau gangguan terhadap sinyal MJO, sehingga menjadikan wilayah ini sebagai area kunci dalam memahami dinamika global dan prediktabilitas MJO \cite{Lu2025}.
+
+
+\textit{Outgoing Longwave Radiation} (OLR) merupakan indikator penting aktivitas konvektif yang merepresentasikan jumlah \textit{longwave radiation} yang dipancarkan dari sistem bumi-atmosfer ke luar angkasa. Selama fase aktif MJO, terbentuk tutupan awan cirrus tebal yang luas sehingga menekan \textit{longwave radiation} yang dipancarkan ke luar angkasa, menghasilkan anomali negatif berkisar antara -20 hingga -40 W m$^{-2}$ \cite{Wheeler2004}. Sebaliknya, pada fase teredam \textit{(suppressed)}, berkurangnya tutupan awan menyebabkan peningkatan nilai OLR. Fluktuasi OLR tidak hanya merepresentasikan respons pasif terhadap perubahan tutupan awan, tetapi juga mengreorganisasi struktur termal atmosfer tropis serta sirkulasi vertikal yang dipicu oleh dinamika MJO \cite{Sobel2013}.
+
+Perubahan energi radiasi yang berkaitan dengan anomali OLR akibat aktivitas MJO memiliki dampak langsung terhadap suhu efektif bumi. Berdasarkan hubungan Stefan–Boltzmann \begin{equation}
+F = \sigma T^4
+\label{eq:stefan_boltzmann}
+\end{equation}
+perubahan fluks \textit{longwave radiation} dapat dikonversi menjadi anomali suhu efektif yang bervariasi secara sistematis pada setiap fase MJO \cite{Koll2018,Allan2014}.
+Selain memengaruhi radiasi di puncak atmosfer, aktivitas konvektif yang berkaitan dengan MJO juga memodulasi temperatur permukaan \textit{Surface Temperature}, $T_s$. Peningkatan $T_s$ selama kondisi MJO aktif mengakibatkan penguatan pemanasan atmosfer yang dipicu oleh meningkatnya kandungan uap air, tutupan awan. Pemanasan ini berkaitan erat dengan penguatan proses efek rumah kaca, ketika atmosfer menjadi lebih efektif dalam memerangkap \textit{longwave radiation} yang keluar sehingga meningkatkan kondisi termal dekat permukaan di wilayah tersebut \cite{Trenberth2016,Wild2015}.
+
+Hubungan antara MJO dan variabilitas fluks radiasi telah banyak dikaji di wilayah Indonesia \cite{sofiati2002, athoillah2017, batubara2022}, sebagian besar penelitian tersebut masih berfokus pada respons konvektif dan anomali OLR sebagai proksi aktivitas konveksi \cite{fajarianti2019, ramadhan2021, wahyuni2024}, tanpa secara eksplisit mengkuantifikasi perubahan suhu efektif maupun intensitas efek rumah kaca menggunakan pendekatan termodinamika seperti hukum Stefan–Boltzmann. Studi yang secara langsung menghitung anomali suhu efektif serta efek rumah kaca menggunakan kerangka Stefan–Boltzmann untuk setiap fase MJO, khususnya di wilayah Indonesia, masih relatif terbatas \cite{Ling2011}.
+
+Penelitian ini bertujuan untuk menganalisis pengaruh variabilitas MJO terhadap fluks radiasi, suhu efektif, dan intensitas efek rumah kaca di wilayah Benua Maritim Indonesia (95.25$^\circ$BT--140.5$^\circ$BT; 10.5$^\circ$LS--5.75$^\circ$LU). Wilayah ini dipilih karena merupakan salah satu pusat aktivitas konveksi tropis dunia yang memiliki interaksi laut--atmosfer yang kuat serta berperan penting dalam propagasi MJO.Melalui metode komposit berbasis fase dan analisis anomali, penelitian ini menganalisis variasi \textit{longwave radiation} selama siklus MJO. Selanjutnya, \textit{longwave radiation} digunakan untuk menghitung perubahan suhu efektif berdasarkan hukum Stefan--Boltzmann, serta untuk mengevaluasi variasi intensitas efek rumah kaca pada setiap fase MJO.
+
+
+
+\section{Rumusan Masalah}
+Berdasarkan latar belakang yang telah diuraikan, rumusan masalah 
+dalam penelitian ini adalah sebagai berikut:
+\begin{enumerate}
+    \item Bagaimana setiap fase MJO memodulasi OLR dan ($T_s$) di wilayah Indonesia?
+
+    \item Bagaimana variasi fase MJO mengubah suhu efektif atmosfer di wilayah Indonesia berdasarkan kerangka termodinamika Stefan--Boltzmann?
+
+    \item Seberapa besar variasi intensitas GHI pada setiap fase MJO di wilayah Indonesia?
+\end{enumerate}
+
+\section{Hipotesis Penelitian}
+Berdasarkan rumusan masalah yang telah dipaparkan, hipotesis dalam penelitian ini adalah sebagai berikut:
+\begin{enumerate}
+    \item Setiap fase MJO memodulasi distribusi OLR dan $T_s$ di wilayah Indonesia. Fase aktif konveksi MJO ditandai oleh penurunan OLR dan perubahan suhu permukaan yang berbeda dibandingkan fase teredam.
+
+    \item Variasi fase MJO menyebabkan perubahan suhu efektif atmosfer di wilayah Indonesia. Berdasarkan hukum Stefan--Boltzmann, perubahan OLR yang terkait dengan aktivitas konveksi MJO akan diikuti oleh perubahan suhu efektif atmosfer.
+
+    \item Intensitas GHI di wilayah Indonesia bervariasi menurut fase MJO. Fase aktif konveksi MJO cenderung menurunkan intensitas GHI akibat peningkatan tutupan awan, sedangkan fase teredam cenderung meningkatkan intensitas GHI karena kondisi atmosfer yang lebih cerah.
+\end{enumerate}
+
+
+
+\section{Manfaat Penelitian}
+Penelitian ini diharapkan memberikan manfaat sebagai berikut:
+\begin{enumerate}
+    \item {Manfaat Teoretis} \\
+    Penelitian ini berkontribusi pada pengembangan pemahaman ilmiah 
+    mengenai mekanisme interaksi antara MJO dan variabilitas fluks \textit{longwave radiation} di wilayah Indonesia, khususnya dalam 
+     perubahan suhu efektif dan intensitas 
+    GHE menggunakan kerangka termodinamika Stefan--Boltzmann yang selama ini belum banyak diterapkan secara 
+    eksplisit dalam konteks MJO di wilayah tropis Indonesia.
+    
+    \item {Manfaat Praktis} \\
+    Hasil penelitian ini dapat digunakan sebagai dasar ilmiah bagi 
+    Badan Meteorologi, Klimatologi, dan Geofisika (BMKG) dalam 
+    meningkatkan akurasi prakiraan cuaca dan iklim berbasis fase MJO, 
+    serta sebagai referensi dalam penyusunan kebijakan mitigasi 
+    perubahan iklim di Indonesia.
+    
+\end{enumerate}
+
+\section{Ruang Lingkup Penelitian}
+Ruang lingkup penelitian ini mencakup hal-hal sebagai berikut:
+\begin{enumerate}
+
+    \item {Lingkup Wilayah} \\
+    Penelitian ini fokus pada wilayah Indonesia yang mencakup domain MC pada koordinat
+    95,25$^{\circ}$BT--140,5$^{\circ}$BT dan
+    10,5$^{\circ}$LS--5,75$^{\circ}$LU.
+
+    \item {Lingkup Waktu} \\
+    Data yang digunakan mencakup periode 2018--2021 dengan resolusi harian.
+    Analisis dilakukan berdasarkan delapan fase MJO yang ditentukan menggunakan indeks
+    \textit{Real-time Multivariate MJO} (RMM) yang dikembangkan oleh
+    Wheeler dan Hendon (2004) serta diperoleh dari
+    \textit{Australian Bureau of Meteorology} (BoM), Australia.
+
+    \item {Lingkup Variabel} \\
+    Variabel yang dikaji meliputi OLR dan $T_s$ yang diperoleh dari dataset ERA5.
+    Selain itu, penelitian ini menggunakan temperatur efektif atmosfer
+    ($T_{\mathrm{eff}}$) yang dihitung dari OLR berdasarkan hukum
+    Stefan--Boltzmann, serta intensitas efek rumah kaca yang diturunkan
+    dari perbedaan antara suhu permukaan dan temperatur efektif atmosfer.
+
+\end{enumerate}
+
+
+% ==================== BAB 2 ====================
+\chapter{TINJAUAN PUSTAKA}
+
+\section{Madden--Julian Oscillation (MJO)}
+ 
+Madden--Julian Oscillation (MJO) merupakan fenomena variabilitas atmosfer
+tropis intramusiman yang paling dominan, ditandai oleh propagasi anomali
+konveksi dari barat ke timur sepanjang wilayah ekuator dengan periode
+sekitar 30--60 hari dan kecepatan fase $\sim$5 m\,s$^{-1}$
+\cite{madden1971, zhang2005}. Fenomena ini pertama kali diidentifikasi oleh
+Madden dan Julian \cite{madden1971} melalui analisis spektral angin zonal
+dan tekanan permukaan di Pasifik Tropis. MJO memiliki dampak yang luas
+terhadap curah hujan, sirkulasi atmosfer global, monsun Asia--Australia,
+serta kejadian cuaca ekstrem di wilayah tropis, termasuk Indonesia yang
+terletak di MC sebagai salah satu wilayah dengan
+aktivitas konveksi MJO paling kuat.
+ 
+Secara fisika, MJO merupakan hasil interaksi kompleks antara dinamika fluida
+atmosfer, termodinamika tropis, dan pertukaran energi antara laut dan
+atmosfer. Fase aktif MJO dicirikan oleh akumulasi kelembapan di troposfer
+bawah (\textit{preconditioning}), diikuti oleh pembentukan awan konvektif
+skala besar, pelepasan panas laten yang masif, dan pembangkitan gelombang
+atmosfer ekuatorial \cite{zhang2005, kiladis2009}.
+ 
+%-----------------------------------------------------------
+\subsection{Faktor-Faktor yang Mempengaruhi MJO}
+%-----------------------------------------------------------
+ 
+\subsubsection{Suhu Permukaan (\textit{Surface Temperature}, $T_s$)}
+ 
+Suhu permukaan $T_s$ merupakan parameter penting dalam sistem iklim tropis
+karena memengaruhi pertukaran energi antara permukaan dan atmosfer.
+Peningkatan suhu permukaan dapat meningkatkan evaporasi sehingga menambah
+kandungan uap air di lapisan atmosfer bawah. Laju pertukaran panas laten
+antara permukaan dan atmosfer dinyatakan melalui formulasi
+\textit{bulk aerodynamic}:
+ 
+\begin{equation}
+  Q_E = \rho\, L_v\, C_E\, U\, (q_s - q_a),
+  \label{eq:latentflux}
+\end{equation}
+
+\noindent
+Pada Persamaan~\ref{eq:latentflux}, $Q_E$ merepresentasikan fluks panas laten
+(W\,m$^{-2}$), $\rho$ densitas udara (kg\,m$^{-3}$), $L_v$ kalor laten
+penguapan (J\,kg$^{-1}$), $C_E$ koefisien transfer panas laten, $U$
+kecepatan angin permukaan (m\,s$^{-1}$), sedangkan $q_s$ dan $q_a$ menunjukkan kelembapan spesifik pada permukaan dan lapisan
+udara (kg\,kg$^{-1}$). Peningkatan selisih $(q_s - q_a)$ akan
+meningkatkan fluks energi dari permukaan ke atmosfer sehingga mendukung
+perkembangan proses konveksi yang berkaitan dengan aktivitas MJO
+\cite{sobel2010}.
+ 
+\subsubsection{Kelembapan Atmosfer}
+ 
+Kelembapan atmosfer merupakan faktor pengendali utama dalam kerangka
+\textit{moisture mode theory} \cite{sobel2013, raymond2009}. Evolusi
+kelembapan spesifik $q$ di atmosfer dideskripsikan oleh persamaan
+konservasi kelembapan:
+ 
+\begin{equation}
+  \frac{\partial q}{\partial t}
+  = -\nabla \cdot (q\,\mathbf{v}) + E - P,
+  \label{eq:moisture}
+\end{equation}
+ 
+\noindent
+$\mathbf{v}$ adalah vektor angin tiga dimensi, $E$ adalah laju
+evaporasi, dan $P$ laju presipitasi (keduanya dalam satuan
+kg\,m$^{-2}$\,s$^{-1}$). Sebelum konveksi kuat berkembang, atmosfer
+mengalami proses \textit{preconditioning}, yaitu akumulasi kelembapan
+bertahap di troposfer bawah yang didorong oleh konvergensi fluks kelembapan
+horizontal.
+ 
+%-----------------------------------------------------------
+\subsubsection{Dinamika Gelombang Atmosfer Ekuatorial}
+%-----------------------------------------------------------
+ 
+Pemanasan konvektif yang terjadi selama aktivitas MJO memengaruhi dinamika atmosfer tropis dan menghasilkan propagasi gelombang atmosfer ekuatorial. Perkembangan gelombang tersebut umumnya dianalisis menggunakan kerangka persamaan \textit{shallow-water} linear pada bidang ekuator (\textit{equatorial beta-plane}) \cite{matsuno1966}:
+ 
+\begin{equation}
+  \frac{\partial u}{\partial t} - \beta y\,v
+  = -\frac{\partial \phi}{\partial x},
+  \label{eq:sw1}
+\end{equation}
+ 
+\begin{equation}
+  \frac{\partial v}{\partial t} + \beta y\,u
+  = -\frac{\partial \phi}{\partial y},
+  \label{eq:sw2}
+\end{equation}
+ 
+\begin{equation}
+  \frac{\partial \phi}{\partial t}
+  + c^2\!\left(\frac{\partial u}{\partial x}
+  + \frac{\partial v}{\partial y}\right) = Q,
+  \label{eq:sw3}
+\end{equation}
+ 
+\noindent
+$u$ dan $v$ adalah komponen angin zonal dan meridional
+(m\,s$^{-1}$), $\phi$ adalah geopotensial (m$^2$\,s$^{-2}$), $\beta =
+\partial f / \partial y$ adalah gradien meridional parameter Coriolis
+(m$^{-1}$\,s$^{-1}$), $c$ adalah kecepatan fase gelombang gravitasi
+(m\,s$^{-1}$), dan $Q$ merepresentasikan pemanasan konvektif
+(m$^2$\,s$^{-3}$). Solusi dari sistem persamaan \eqref{eq:sw1}--\eqref{eq:sw3}
+menghasilkan dua moda gelombang utama yang relevan bagi MJO. Pertama,
+gelombang Kelvin yang merambat ke arah timur tanpa komponen angin
+meridional ($v = 0$) dan berperan mendorong propagasi timur MJO. Kedua,
+gelombang Rossby ekuatorial yang merambat ke arah barat dan
+membentuk sirkulasi siklonik di sebelah barat pusat konveksi aktif
+\cite{matsuno1966, kiladis2009}.
+ 
+%-----------------------------------------------------------
+\subsubsection{Moist Static Energy (MSE)}
+%-----------------------------------------------------------
+ 
+Kerangka \textit{Moist Static Energy} (MSE) digunakan untuk menjelaskan keseimbangan energi yang berperan dalam dinamika MJO secara lebih komprehensif \cite{raymond2009}. MSE per satuan massa udara didefinisikan sebagai:
+ 
+\begin{equation}
+  h = c_p T + gz + L_v q,
+  \label{eq:mse}
+\end{equation}
+ 
+\noindent
+$c_p T$ adalah energi termal sensibel (J\,kg$^{-1}$), $gz$ adalah
+energi potensial gravitasi (J\,kg$^{-1}$), dan $L_v q$ adalah energi laten
+uap air (J\,kg$^{-1}$). Persamaan anggaran MSE menggambarkan bagaimana $h$ bergerak
+secara horizontal dan vertikal, diperkuat oleh fluks permukaan, dan
+didisipasi oleh radiasi atmosfer. Dalam kerangka ini, MJO dianggap sebagai
+osilasi berskala besar dari proses akumulasi (\textit{recharge}) dan
+pelepasan (\textit{discharge}) MSE di atmosfer tropis \cite{sobel2013,
+raymond2009}.
+
+\subsection{Indeks \textit{Real-time Multivariate MJO} (RMM)}
+ 
+Pemantauan dan kuantifikasi aktivitas MJO secara operasional dilakukan menggunakan Indeks \textit{Real-time Multivariate MJO} (RMM) yang dikembangkan oleh Matthew C. Wheeler dan Harry H. Hendon \cite{wheeler2004}. Indeks ini diturunkan dari analisis
+\textit{Empirical Orthogonal Function} (EOF) terhadap tiga variabel atmosfer
+yang telah dirata-ratakan secara meridional ($15^\circ$S--$15^\circ$N) dan
+dirata-ratakan terhadap siklus tahunan:
+ 
+\begin{enumerate}
+  \item \textit{Outgoing Longwave Radiation} (OLR) sebagai proksi aktivitas
+        konveksi,
+  \item Angin zonal pada tekanan 850\,hPa (U850) sebagai representasi
+        sirkulasi lapisan bawah, dan
+  \item Angin zonal pada tekanan 200\,hPa (U200) sebagai representasi
+        sirkulasi lapisan atas.
+\end{enumerate}
+ 
+Dua EOF utama yang merepresentasikan pola spasial MJO pada fase yang berbeda menghasilkan dua komponen indeks, yaitu RMM1 dan RMM2. Amplitudo MJO kemudian didefinisikan sebagai:
+ 
+\begin{equation}
+  A = \sqrt{\mathrm{RMM1}^2 + \mathrm{RMM2}^2},
+  \label{eq:rmm}
+\end{equation}
+ 
+\noindent
+Nilai amplitudo dengan kriteria $A > 1$ menunjukkan kondisi MJO aktif, sedangkan $A \leq 1$ menunjukkan aktivitas MJO yang lemah atau tidak signifikan. Selanjutnya, sudut fase $\theta = \arctan(\mathrm{RMM2}/\mathrm{RMM1})$ digunakan untuk menentukan lokasi propagasi konveksi aktif MJO yang dibagi ke dalam delapan fase.
+
+\begin{table}[h]
+\centering
+\caption{Fase MJO dan lokasi utama konveksi}
+\label{tab:mjo_phase}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{cl}
+\toprule
+\textbf{Fase} & \textbf{Lokasi Utama Konveksi MJO} \\
+\midrule
+1 & Afrika Barat -- Samudra Hindia Barat \\
+2 & Samudra Hindia Tengah \\
+3 & Samudra Hindia Timur -- Sumatra \\
+4 & \textit{Maritime Continent} (Indonesia Barat--Tengah) \\
+5 & \textit{Maritime Continent} (Indonesia Tengah--Timur) \\
+6 & Pasifik Barat \\
+7 & Pasifik Tengah \\
+8 & Pasifik Barat -- Afrika Timur \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+%============================================================
+\section{\textit{Longwave Radiation Fluks}}
+%============================================================
+
+ 
+\textit{Outgoing Longwave Radiation} (OLR) didefinisikan sebagai fluks radiasi inframerah yang dipancarkan oleh sistem bumi atmosfer ke angkasa luar pada puncak atmosfer \textit{Top of Atmosphere} (TOA). OLR merupakan komponen kunci dalam neraca energi bumi karena merepresentasikan fluks keluaran dari sistem tersebut. Secara fisis, OLR merupakan integrasi emisi termal dari permukaan dan atmosfer yang berhasil keluar ke angkasa setelah mengalami proses absorpsi dan emisi kembali oleh gas rumah kaca serta awan di atmosfer.
+
+Secara matematis, OLR dapat dinyatakan sebagai hasil integral spektral dari radiasi inframerah yang keluar pada TOA:
+\begin{equation}
+OLR = \int_{0}^{\infty} F^{\uparrow}_{\lambda, TOA} \, d\lambda
+\end{equation}
+
+\begin{equation}
+OLR = \int_{0}^{\infty} B_{\lambda}(T_s)\,\mathcal{T}_{\lambda} \, d\lambda
+\end{equation}
+
+ $B_{\lambda}(T_s)$ adalah fungsi Planck yang merepresentasikan emisi radiasi benda hitam pada suhu $T_s$, dan $\mathcal{T}_{\lambda}$ adalah transmisivitas atmosfer yang bergantung pada panjang gelombang.
+ 
+ 
+\section{Data ERA5 }
+ 
+ERA5 merupakan produk reanalisis generasi terbaru dari  \textit{European Centre for Medium-Range Weather Forecasts} ECMWF yang menggabungkan model prediksi cuaca numerik resolusi tinggi dengan sistem asimilasi data 4D-Var
+untuk mengintegrasikan jutaan observasi dari berbagai platform ke dalam
+konsistensi fisika atmosfer. ERA5 mencakup lebih dari 240 variabel atmosfer dan
+permukaan dari tahun 1940 hingga saat ini, dengan pembaruan berkala.
+ 
+Dalam penelitian ini, digunakan data fluks radiasi harian dari ERA5 selama periode 2018–2021 sebagai sumber data utama untuk menganalisis variabilitas radiasi atmosfer. Tabel~\ref{tab:era5_var} merupakan variabel ERA5 yang digunakan dalam penelitian.
+ 
+\begin{table}[htbp]
+  \centering
+  \caption{Variabel ERA5 yang digunakan dalam penelitian}
+  \label{tab:era5_var}
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.5cm}
+                               >{\raggedright\arraybackslash}X
+                               >{\centering\arraybackslash}p{2.2cm}
+                               >{\centering\arraybackslash}p{1.5cm}}
+    \toprule
+    \textbf{Variabel} & \textbf{Nama Lengkap} &
+    \textbf{Resolusi Spasial} & \textbf{Satuan} \\
+    \midrule
+    OLR (\texttt{mtnlwrf})  & \textit{Mean Top Net Longwave Radiation}              & $0{,}25^{\circ}$ & W\,m$^{-2}$ \\
+$T_s$ (\texttt{skt}) & \textit{Skin Temperature / Surface Temperature} 		    & $0{,}25^{\circ}$ & K \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+ 
+%============================================================
+\section{\textit{Effective Radiative Temperature}, (ERT)}
+%============================================================
+ 
+\subsection{Hukum Stefan-Boltzmann sebagai Dasar Perhitungan ERT}
+ 
+Suhu efektif radiatif (\textit{Effective Radiative Temperature}, ERT) diturunkan
+dari fluks radiasi menggunakan Hukum Stefan-Boltzmann~\cite{Stephens2012}.
+Hukum ini menyatakan bahwa fluks total energi yang dipancarkan oleh suatu benda
+hitam (\textit{blackbody}) sebanding dengan pangkat empat suhu mutlak:
+ 
+\begin{equation}
+  F = \sigma\, T^{4}
+  \label{eq:stefan_boltzmann}
+\end{equation}
+ 
+\noindent
+$F$ adalah fluks radiasi (W\,m$^{-2}$), $T$ adalah suhu mutlak (K), dan
+$\sigma = 5{,}67 \times 10^{-8}$~W\,m$^{-2}$\,K$^{-4}$ adalah konstanta
+Stefan-Boltzmann. 
+ 
+\subsection{Suhu Efektif Berbasis OLR ($T_{\mathrm{eff}}$)}
+ 
+Suhu efektif OLR, ($T_{\mathrm{eff}}$), dihitung dari
+nilai OLR yang terukur di TOA menggunakan inversi Hukum Stefan-Boltzmann:
+ 
+\begin{equation}
+  T_{\mathrm{eff}} = \left(\frac{\mathrm{OLR}}{\sigma}\right)^{1/4}
+  \label{eq:teff_olr1}
+\end{equation}
+ 
+$T_{\mathrm{eff}}$ merepresentasikan suhu benda hitam
+ekuivalen (\textit{equivalent blackbody temperature}) di mana sistem
+bumi-atmosfer memancarkan radiasi termal ke angkasa. Parameter ini berfungsi
+sebagai indikator kondisi radiatif di TOA~\cite{Stephens2012,Mauritsen2015}.
+Ketika awan konvektif dalam terbentuk pada fase aktif MJO, nilai
+$T_{\mathrm{eff}}$ akan lebih rendah karena emisi berasal dari puncak awan
+yang dingin. Sebaliknya, pada kondisi langit cerah (fase supresif MJO), nilai
+$T_{\mathrm{eff}}$ mendekati suhu permukaan \cite{Koll2018}.
+ 
+%============================================================
+\section{Indeks Efek Rumah Kaca (\textit{Greenhouse Effect}, GHE)}
+%============================================================
+ 
+
+Efek rumah kaca (\textit{Greenhouse Effect}, GHE) merupakan proses radiatif
+atmosfer yang berperan dalam mengatur keseimbangan energi sistem
+Bumi--atmosfer melalui mekanisme penyerapan dan pemancaran kembali 
+\textit{longwave radiation} oleh gas-gas rumah kaca \cite{donohoe2014}. Radiasi Matahari
+yang didominasi oleh \textit{shortwave radiation} sebagian besar dapat menembus
+atmosfer dan diserap oleh permukaan Bumi, sehingga meningkatkan energi internal
+permukaan \cite{koll2018,feng2023}.
+ 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{ghe.png}
+\caption{Diagram Neraca Energi Bumi Global \cite{ghe}}
+\label{fig:ghe}
+\end{figure}
+ 
+Energi yang diserap tersebut selanjutnya dipancarkan kembali oleh permukaan
+dalam bentuk \textit{longwave radiation} sesuai dengan prinsip radiasi benda
+hitam. Sebagian radiasi gelombang panjang diserap oleh konstituen atmosfer
+seperti uap air, karbon dioksida, dan gas rumah kaca lainnya
+\cite{teixeira2024}, kemudian dipancarkan kembali secara isotropik, termasuk ke
+arah permukaan Bumi \cite{wang2023}, sehingga menyebabkan peningkatan suhu
+efektif permukaan dibandingkan dengan kondisi tanpa atmosfer \cite{feng2023}.
+GHE pada setiap titik grid didefinisikan sebagai selisih antara
+$T_s$ dan suhu efektif radiatif berbasis OLR ($T_{\mathrm{eff}}$)
+\cite{Raval1989,Aires2003}:
+%
+\begin{equation}
+  \mathrm{GHE} = T_s - T_{\mathrm{eff}}
+  \label{eq:ghe}
+\end{equation}
+%
+Indeks ini merepresentasikan radiasi yang terjebak di atmosfer
+(\textit{atmospheric radiative trapping efficiency}). Nilai GHE yang lebih
+tinggi mengindikasikan bahwa atmosfer menyerap dan memancarkan kembali lebih
+banyak energi \textit{longwave} ke permukaan dibandingkan yang dilepaskan ke
+luar angkasa, sehingga mencerminkan retensi energi yang lebih besar dalam
+sistem iklim \cite{Aires2003}.
+ 
+Secara konseptual, formulasi ini merupakan pengembangan dari definisi klasik
+efek rumah kaca yang dinyatakan sebagai selisih antara suhu permukaan dan suhu
+efektif atmosfer \cite{Raval1989}. Pendekatan penelitian ini menggunakan $T_s$
+secara langsung sebagai representasi kondisi termal aktual permukaan, sedangkan
+$T_{\mathrm{eff}}$ mencerminkan suhu emisi efektif sistem bumi--atmosfer di
+TOA. Penggunaan $T_s$ menggantikan suhu efektif berbasis fluks radiasi
+permukaan bertujuan untuk mengisolasi komponen penjebakan energi yang bersifat
+murni radiatif sekaligus meminimalkan pengaruh proses non-radiatif seperti
+fluks panas sensibel dan laten \cite{Kiehl1997}.
+ 
+
+
+%============================================================
+\section{Perhitungan Klimatologi Harian dan Anomali}
+%============================================================
+ 
+\subsection{Klimatologi Harian}
+ 
+ Mengisolasi sinyal intraseasonal MJO dari variabilitas siklus musiman
+dan variabilitas jangka panjang, dilakukan perhitungan klimatologi harian pada
+setiap titik grid untuk periode 2018--2021. Klimatologi harian dihitung sebagai
+rata-rata nilai variabel pada setiap hari kalender yang sama di seluruh tahun
+analisis:
+ 
+\begin{equation}
+  \bar{X}(\mathrm{lat}, \mathrm{lon}, d_y) =
+  \frac{1}{N_{\mathrm{yr}}} \sum_{y=1}^{N_{\mathrm{yr}}}
+  X(\mathrm{lat}, \mathrm{lon}, d_y, y)
+  \label{eq:climatology}
+\end{equation}
+ 
+\noindent
+$X(lat, lon, dy, y)$ menyatakan nilai variabel meteorologi
+(misalnya OLR, curah hujan, atau kelembapan kolom atmosfer) pada koordinat
+spasial $(lat, lon)$, pada hari ke-$dy$ ($dy = 1, 2, \ldots, 365$), dalam tahun ke-$y$. Variabel
+$N_{yr}$ menyatakan jumlah tahun dalam periode analisis (dalam studi ini
+$N_{yr} = 4$). Nilai $\overline{X}$ yang dihasilkan merepresentasikan siklus
+musiman rata-rata (\textit{mean seasonal cycle}).
+ 
+\subsection{Anomali Harian}
+ 
+Anomali harian dihitung dengan mengurangkan nilai klimatologi dari data harian
+aktual:
+ 
+\begin{equation}
+  X'(\mathrm{lat}, \mathrm{lon}, t) =
+  X(\mathrm{lat}, \mathrm{lon}, t) -
+  \bar{X}(\mathrm{lat}, \mathrm{lon},\, d_y(t))
+  \label{eq:anomaly}
+\end{equation}
+ 
+$dy(t)$ menyatakan indeks hari-dalam-tahun yang
+bersesuaian dengan waktu $t$. Operasi pengurangan ini secara efektif
+menghilangkan komponen siklus musiman deterministik dan variabilitas latar
+belakang (\textit{background variability}) yang berfrekuensi rendah, sehingga
+yang tersisa adalah fluktuasi intramusiman dengan periode 20--90 hari yang
+berkaitan dengan aktivitas MJO. Prosedur ini merupakan langkah
+pra-pemrosesan standar dalam studi MJO \cite{Wheeler2004, Kiladis2014}
+karena memastikan bahwa sinyal komposit yang diperoleh pada tahap berikutnya
+tidak terkontaminasi oleh variasi musiman yang jauh lebih dominan secara
+amplitudo.
+ 
+%============================================================
+\section{Analisis Komposit Berbasis Fase MJO}
+%============================================================
+ 
+Pendekatan komposit berdasarkan fase MJO digunakan untuk
+mengkarakterisasi struktur spasial rata-rata anomali variabel atmosfer
+yang berkaitan dengan setiap tahapan propagasi 
+MJO. Fenomena MJO direpresentasikan ke dalam delapan fase utama
+($k = 1, 2, \ldots, 8$). Setiap fase MJO ke-$k$, dihitung degan rata-rata sederhana (\textit{arithmetic mean})
+dari seluruh hari aktif MJO yang diklasifikasikan ke dalam fase tersebut,
+sehingga diperoleh representasi karakteristik spasial anomali pada masing-masing fase.
+ 
+\begin{equation}
+  C_k(\mathrm{lat}, \mathrm{lon}) =
+  \frac{1}{N_k}
+  \sum_{t \,\in\, \Phi_k} X'(\mathrm{lat}, \mathrm{lon}, t)
+  \label{eq:composite}
+\end{equation}
+
+
+$\phi_k$ menyatakan himpunan indeks waktu $t$ dari seluruh hari aktif MJO yang termasuk ke dalam fase ke-$k$, yang didefinisikan sebagai hari-hari dengan amplitudo RMM $A(t)=\sqrt{\mathrm{RMM1}(t)^2+\mathrm{RMM2}(t)^2}>1{,}0$ dan berada pada fase RMM yang bersesuaian, sedangkan $N_k=|\phi_k|$ menyatakan jumlah total sampel hari yang termasuk ke dalam fase ke-$k$.
+
+
+
+
+% ==================== BAB 3 ====================
+\chapter{METODOLOGI PENELITIAN}
+
+\section{Rancangan Penelitian}
+
+ Penelitian ini merupakan penelitian kuantitatif deskriptif-analitik yang
+berfokus pada analisis variabilitas spasial dan temporal parameter radiasi
+atmosfer dalam kaitannya dengan siklus fase MJO di wilayah Indonesia. Pendekatan yang digunakan adalah metode analisis
+komposit (\textit{composite analysis}) berbasis fase MJO, yaitu teknik yang
+mengelompokkan data berdasarkan fase aktif MJO tertentu kemudian menganalisis
+rata-rata anomali variabel meteorologis pada setiap fase tersebut. Pendekatan
+ini memungkinkan identifikasi pola respons sistematis parameter radiasi terhadap
+siklus propagasi MJO.
+
+Penelitian ini bersifat observasional karena seluruhnya menggunakan data yang
+telah tersedia dari produk ERA5 dan indeks iklim, tanpa melibatkan
+eksperimen numerik atau pemodelan iklim secara langsung. Analisis dilakukan
+secara retrospektif untuk periode 2018--2021, yang mencakup variasi kondisi MJO
+dari yang sangat aktif hingga lemah, sehingga representatif untuk
+mengkarakterisasi hubungan antara MJO dan parameter radiasi atmosfer.
+
+
+\newpage
+%============================================================
+\subsection{Diagram Alir Penelitian}
+%============================================================
+
+Alur lengkap proses penelitian dari pengumpulan data hingga
+interpretasi hasil ditunjukkan pada
+Gambar~\ref{fig:flowchart}.
+
+\begin{figure}[H]
+\centering
+\resizebox{0.38\textwidth}{!}{%
+\begin{tikzpicture}[
+node distance=0.4cm and 1.0cm,
+every node/.style={font=\fontsize{4.5}{5}\selectfont},
+startstop/.style={
+rectangle,
+rounded corners,
+minimum width=1.6cm,
+minimum height=0.35cm,
+text centered,
+draw=black,
+fill=gray!20
+},
+process/.style={
+rectangle,
+minimum width=3.3cm,
+minimum height=0.5cm,
+text width=3.1cm,
+align=center,
+draw=black,
+fill=blue!5
+},
+decision/.style={
+diamond,
+aspect=1.5,
+text width=1.3cm,
+align=center,
+draw=black,
+fill=orange!10,
+inner sep=0.2pt
+},
+arrow/.style={
+thin,
+->,
+>=stealth
+}
+]
+
+\node (start) [startstop] {Mulai};
+
+\node (dl1) [process, below=of start]
+{Akuisisi data OLR, $T_{\mathrm{s}}$ ERA5, dan Indeks RMM1 dan RMM2};
+
+\node (prep) [process, below=of dl1]
+{Pra-pemrosesan data dan sinkronisasi temporal};
+
+\node (teff) [process, below=of prep]
+{Perhitungan $T_{\mathrm{eff,OLR}}$, $T_{\mathrm{s}}$, dan Indeks GHE};
+
+\node (clim) [process, below=of teff]
+{Perhitungan klimatologi dan anomali};
+
+\node (amp) [process, below=of clim]
+{Perhitungan amplitudo MJO};
+
+\node (dec) [decision, below=0.45cm of amp]
+{$A>1$ ?};
+
+\node (comp) [process, below=0.45cm of dec]
+{Komposit anomali berdasarkan fase MJO};
+
+\node (vis) [process, below=of comp]
+{Visualisasi dan interpretasi};
+
+\node (end) [startstop, below=of vis]
+{Selesai};
+
+\draw [arrow] (start) -- (dl1);
+\draw [arrow] (dl1) -- (prep);
+\draw [arrow] (prep) -- (teff);
+\draw [arrow] (teff) -- (clim);
+\draw [arrow] (clim) -- (amp);
+\draw [arrow] (amp) -- (dec);
+
+\draw [arrow]
+(dec) --
+node[right]{Ya}
+(comp);
+
+\draw [arrow] (comp) -- (vis);
+\draw [arrow] (vis) -- (end);
+
+% PERBAIKAN: Jika "Tidak" (A <= 1), data dibuang dan langsung menuju Selesai (end)
+\draw [arrow]
+(dec.east) -- ++(1.3,0)
+node[above,pos=0.35]{Tidak}
+|- (end.east);
+
+\end{tikzpicture}%
+}
+\caption{Diagram alir tahapan komputasi penelitian (Data $A \le 1$ dieliminasi)}
+\label{fig:flowchart}
+\end{figure}
+
+%------------------------------------------------------------
+\subsection{Pengunduhan dan Persiapan Data}
+%------------------------------------------------------------
+
+Tahap pertama adalah pengunduhan data OLR dan $T_{\mathrm{s}}$ harian dari produk ERA5 ECMWF
+dalam format NetCDF (\texttt{.nc}), serta data indeks RMM1 dan RMM2 dari
+\textit{Bureau of Meteorology} dalam format teks (\texttt{.txt}). Setelah data
+diperoleh, dilakukan beberapa proses sebagai berikut:
+
+\begin{enumerate}
+  \item {Pembatasan Domain Spasial:} Data ERA5 dipotong (\textit{cropping})
+    sesuai domain wilayah Benua Maritim Indonesia ($10^{\circ}$LU--$15^{\circ}$LS,
+    $90^{\circ}$BT--$145^{\circ}$BT) menggunakan metode seleksi koordinat
+    dengan pustaka \texttt{xarray}.
+
+  \item {Agregasi Temporal:} Data jam-an ERA5 diagregasi menjadi data
+    harian dengan mengambil nilai rata-rata 24 jam untuk setiap piksel spasial,
+    sehingga diperoleh resolusi temporal yang sesuai dengan resolusi indeks RMM.
+
+  \item {Sinkronisasi Temporal:} Data radiasi ERA5 dan data indeks RMM
+    disinkronkan berdasarkan tanggal agar analisis komposit dapat dilakukan
+    secara konsisten untuk setiap hari selama periode 2018--2021.
+
+\end{enumerate}
+
+%------------------------------------------------------------
+\subsection{Perhitungan ERT}
+%------------------------------------------------------------
+
+ERT dihitung berdasarkan Hukum Stefan-Boltzmann dengan menggunakan
+variabel \textit{Outgoing Longwave Radiation} (OLR). Suhu efektif ini
+merepresentasikan suhu emisi efektif sistem bumi-atmosfer sebagaimana
+terlihat dari \textit{Top of Atmosphere} (TOA).
+
+Nilai suhu efektif dihitung menggunakan hubungan Stefan-Boltzmann:
+
+\begin{equation}
+  T_{\mathrm{eff}} =
+  \left(\frac{\mathrm{OLR}}{\sigma}\right)^{1/4}
+  \label{eq:teff_olr}
+\end{equation}
+
+\noindent
+$\mathrm{OLR}$ adalah fluks \textit{Outgoing Longwave Radiation}
+(W\,m$^{-2}$) dan
+$\sigma = 5{,}67 \times 10^{-8}$~W\,m$^{-2}$\,K$^{-4}$
+adalah konstanta Stefan-Boltzmann.
+%------------------------------------------------------------
+\subsection{Perhitungan Indeks Efek Rumah Kaca (GHE)}
+%------------------------------------------------------------
+
+Indeks \textit{Greenhouse Effect} (GHE) dihitung sebagai selisih antara
+temperatur permukaan dan \textit{Effective Radiating Temperature} (ERT):
+
+\begin{equation}
+  \mathrm{GHE} = T_s - T_{\mathrm{eff}}
+  \label{eq:ghe}
+\end{equation}
+
+\noindent
+$T_s$ adalah temperatur permukaan (K) dan
+$T_{\mathrm{eff}}$ adalah \textit{Effective Radiating Temperature} yang
+dihitung dari OLR menggunakan Hukum Stefan--Boltzmann.
+%------------------------------------------------------------
+\subsection{Isolasi Sinyal Intramonsun dan Perhitungan Anomali}
+%------------------------------------------------------------
+
+Klimatologi harian dihitung sebagai rata-rata nilai setiap variabel pada hari yang sama selama seluruh periode analisis 2018--2021:
+
+\begin{equation}
+  \bar{X}(\mathrm{lat},\mathrm{lon},d) =
+  \frac{1}{N} \sum_{y=2018}^{2021}
+  X(\mathrm{lat},\mathrm{lon},d,y)
+  \label{eq:climatology}
+\end{equation}
+
+\noindent
+$\bar{X}$ adalah nilai klimatologi untuk hari ke-$d$ dalam setahun,
+$X(d,y)$ adalah nilai variabel pada hari ke-$d$ tahun ke-$y$, dan $N$ adalah
+jumlah tahun data.
+
+Anomali harian diperoleh dengan mengurangkan nilai klimatologi dari nilai data
+aktual harian untuk setiap piksel spasial:
+
+\begin{equation}
+  X'(\mathrm{lat},\mathrm{lon},t) =
+  X(\mathrm{lat},\mathrm{lon},t) -
+  \bar{X}\!\left(\mathrm{lat},\mathrm{lon},d(t)\right)
+  \label{eq:anomaly}
+\end{equation}
+
+Anomali yang diperoleh merepresentasikan penyimpangan dari kondisi normal
+musiman, sehingga mencerminkan variabilitas intraseasonal yang dominan
+dipengaruhi oleh fenomena seperti MJO.
+
+%------------------------------------------------------------
+\subsection{Penentuan Amplitudo dan Seleksi Fase MJO Aktif}
+%------------------------------------------------------------
+
+Amplitudo MJO dihitung dari komponen indeks RMM menggunakan persamaan:
+
+\begin{equation}
+  A = \sqrt{\mathrm{RMM1}^{2} + \mathrm{RMM2}^{2}}
+  \label{eq:amplitude}
+\end{equation}
+
+Berdasarkan kriteria yang ditetapkan oleh Wheeler dan Hendon
+(2004)~\cite{Wheeler2004}, MJO diklasifikasikan sebagai aktif
+apabila nilai amplitudo memenuhi kondisi $A > 1{,}0$. Hari-hari dengan
+$A \leq 1{,}0$ dikategorikan sebagai periode MJO lemah (\textit{weak MJO})
+dan dikecualikan dari analisis komposit berbasis fase.
+
+
+%------------------------------------------------------------
+\subsection{Analisis Komposit Berbasis Fase MJO}
+%------------------------------------------------------------
+
+Analisis komposit merupakan tahap inti dalam penelitian ini. Untuk setiap fase
+MJO (fase 1 hingga fase 8), nilai rata-rata anomali dari variabel-variabel OLR,
+SLR, $T_{\mathrm{eff,OLR}}$, $T_{\mathrm{eff,SLR}}$, dan GHE dihitung dari
+seluruh hari dalam periode 2018--2021 yang memenuhi kriteria MJO aktif dan
+berada pada fasenya:
+
+\begin{equation}
+C_k(\mathrm{lat}, \mathrm{lon}) =
+\frac{1}{N_k}
+\sum_{t \in \Phi_k} X'(\mathrm{lat}, \mathrm{lon}, t)
+\label{eq:composite}
+\end{equation}
+
+\noindent
+$C_k(\mathrm{lat}, \mathrm{lon})$ adalah nilai komposit anomali pada
+piksel spasial $(\mathrm{lat}, \mathrm{lon})$ untuk fase ke-$k$, $N_k$ adalah
+jumlah hari dengan MJO aktif yang termasuk dalam fase ke-$k$, $\Phi_k$ adalah
+himpunan indeks waktu yang merepresentasikan seluruh hari aktif MJO pada fase
+ke-$k$, dan $X'(\mathrm{lat}, \mathrm{lon}, t)$ adalah anomali variabel yang
+dianalisis pada lokasi $(\mathrm{lat}, \mathrm{lon})$ dan waktu $t$.
+
+%============================================================
+\section{Perangkat Lunak dan Lingkungan Komputasi}
+%============================================================
+
+Seluruh proses komputasi dalam penelitian ini dilakukan menggunakan bahasa
+pemrograman Python versi 3.9 atau lebih tinggi sebagai platform utama, dengan
+memanfaatkan berbagai pustaka ilmiah yang dirangkum pada
+Tabel~\ref{tab:python_libs}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Pustaka Python yang digunakan dalam penelitian}
+  \label{tab:python_libs}
+  \begin{tabularx}{\textwidth}{
+    >{\raggedright\arraybackslash}p{2.8cm}
+    >{\centering\arraybackslash}p{1.6cm}
+    >{\raggedright\arraybackslash}X}
+    \toprule
+    \textbf{Pustaka (\textit{Library})} & \textbf{Versi} &
+    \textbf{Fungsi dalam Penelitian} \\
+    \midrule
+    \texttt{xarray}     & $\geq$ 0.20 &
+      Pemrosesan data multidimensi NetCDF, seleksi domain spasial,
+      operasi aritmatika array \\
+    NumPy               & $\geq$ 1.21 &
+      Operasi numerik dasar, perhitungan Stefan-Boltzmann, operasi matriks \\
+    \texttt{pandas}     & $\geq$ 1.3  &
+      Pengelolaan data deret waktu indeks RMM, pemfilteran berdasarkan
+      tanggal dan fase \\
+    Matplotlib          & $\geq$ 3.5  &
+      Visualisasi data, pembuatan grafik deret waktu dan diagram komposit \\
+    Cartopy             & $\geq$ 0.20 &
+      Pemetaan spasial anomali pada proyeksi geografis wilayah Indonesia \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+
+\chapter{HASIL dan Pembahasan}
+
+\section{Diagram Fase MJO (2018--2021)}
+ 
+Fase Madden MJO selama periode 2018--2021 memberikan kerangka dinamis yang kuat untuk menginterpretasikan variabilitas OLR dan parameter terkait di kawasan Benua Maritim. Sebagian besar kejadian MJO menunjukkan amplitudo melebihi ambang batas aktif ($A \geq 1$), dengan banyak kasus mencapai amplitudo 2--3, mengindikasikan variabilitas intraseasonal yang kuat.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{MJO.png}
+    \caption{Diagram Fase MJO untuk tahun (a) 2018, (b) 2019, (c) 2020 (d) 2021.}
+    \label{fig:distribusi_fase}
+\end{figure}
+
+Distribusi fase menunjukkan kecenderungan yang jelas berupa pengelompokan pada fase 4--6, yang berkorespondensi dengan peningkatan aktivitas konvektif di atas wilayah Indonesia. Secara keseluruhan pada semua tahun, sekitar 30--40\% hari MJO aktif terkonsentrasi pada fase 4--6, menegaskan seringnya terjadi penguatan konvektif di atas Benua Maritim. Perilaku ini konsisten dengan struktur MJO kanonik yang dijelaskan oleh \cite{Wheeler2004}. Selama fase konvektif aktif tersebut, penguatan gerak vertikal ke atas mendorong konveksi dalam dan peningkatan tutupan awan di lapisan atas, yang berdampak pada penurunan OLR secara umum.
+ 
+Fase 4--6, pada tahun 2018 dan 2021, mengindikasikan kejadian berulang berupa penurunan OLR di atas Indonesia. Sebaliknya, fase 1--3 dan 7--8 memperlihatkan distribusi yang lebih tersebar dengan amplitudo yang umumnya lebih rendah ($A \approx 0,5\text{--}1,5$), yang mencerminkan kondisi konvektif yang lebih lemah atau tertekan. Sebaran titik-titik data selanjutnya mengindikasikan variabilitas intensitas MJO, di mana kejadian ekstrem ($A > 2,5$) terjadi secara intermiten, khususnya pada tahun 2020 dan 2021..
+ 
+% ============================================================
+\section{Distribusi Hari MJO Aktif Berdasarkan Fase (2018--2021)}
+ 
+Distribusi hari MJO aktif (amplitudo $\geq 1$) di seluruh delapan fase MJO selama 2018--2021 memperlihatkan variabilitas antaratunan yang substansial dalam aktivitas konvektif intraseasonal di kawasan Indo-Pasifik. Frekuensi hari MJO aktif tidak terdistribusi secara merata antar fase, yang mengindikasikan perbedaan karakteristik propagasi MJO dari tahun ke tahun yang signifikan.
+ \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{1.1.png}
+    \caption{Distribusi hari Madden--Julian Oscillation (MJO) aktif berdasarkan fase (Ph1--Ph8) selama periode 2018--2021.}
+    \label{fig:distribusi_fase}
+\end{figure}
+Selama periode kajian, peningkatan aktivitas MJO umumnya terkonsentrasi pada fase 4--6, yang berkorespondensi dengan kawasan Benua Maritim. Secara rata-rata, fase-fase tersebut mencakup sekitar 30--40 hari aktif per tahun, dengan puncak aktivitas yang menonjol melebihi 50 hari pada tahun-tahun tertentu. Secara khusus, fase 5 menunjukkan aktivitas tertinggi pada tahun 2020 ($\pm$55 hari), sementara fase 7 memperlihatkan puncak yang signifikan pada tahun 2021 ($\pm$55 hari).
+ 
+Tingginya frekuensi kejadian MJO aktif pada fase 4--6 mencerminkan peran kritis Benua Maritim baik sebagai wilayah amplifikasi konvektif maupun sebagai penghalang transisi bagi propagasi MJO ke arah timur. Secara fisis, perilaku ini berkaitan dengan penguatan konvergensi kelembapan, fluks permukaan yang kuat, dan pelepasan panas laten yang meningkat, yang secara bersama-sama menopang konveksi dalam di wilayah tersebut. Tingginya frekuensi kejadian aktif pada fase-fase ini mengisyaratkan kuat keterkaitan (\emph{coupling}) antara dinamika MJO dan proses konvektif lokal.
+ 
+% ============================================================
+\section{Variasi $T_s$, $T_{\text{eff,OLR}}$, dan GHE Berdasarkan Fase MJO}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{2.2.png}
+    \caption{Variasi (a) suhu permukaan ($T_s$), (b) \emph{outgoing longwave radiation} efektif ($T_{\text{eff,OLR}}$), dan (c) efek rumah kaca (\emph{Greenhouse Effect}, GHE) berdasarkan fase MJO (Ph1--Ph8), dengan perbandingan antara kondisi MJO aktif dan tidak aktif.}
+    \label{fig:variasi_fase}
+\end{figure}
+ 
+Gambar~\ref{fig:variasi_fase} mengilustrasikan variabilitas yang bergantung pada fase dari $T_s$, $T_{\text{eff,OLR}}$, dan GHE selama kondisi MJO aktif dan tidak aktif di seluruh fase 1--8. Hasil analisis menunjukkan modulasi yang jelas terhadap struktur radiasi-termodinamika regional oleh variabilitas konvektif intraseasonal yang berkaitan dengan siklus hidup MJO.
+
+ 
+Gambar~\ref{fig:variasi_fase}(a) menunjukkan bahwa $T_s$ memperlihatkan variasi yang relatif kecil namun sistematis bergantung pada fase. Selama kondisi MJO aktif, suhu permukaan meningkat secara bertahap dari fase 1 (300,1 K) menuju fase 5--7 (300,25--300,30 K), yang mengindikasikan peningkatan energi statik lembab lapisan atmosfer bawah yang berkaitan dengan intensifikasi aktivitas konvektif di atas Benua Maritim. Sebaliknya, kondisi MJO tidak aktif menunjukkan koherensi fase yang lebih lemah dan amplitudo variabilitas yang umumnya lebih rendah, yang mengindikasikan berkurangnya keterkaitan antara termodinamika permukaan dan organisasi konvektif berskala besar. Nilai $T_s$ yang lebih tinggi selama fase aktif konsisten dengan peningkatan kelembapan atmosfer dan proses umpan balik awan--radiasi yang menyertai konveksi dalam.
+ 
+Gambar~\ref{fig:variasi_fase}(b) mengungkapkan modulasi yang signifikan terhadap $T_{\text{eff,OLR}}$ sepanjang siklus hidup MJO. Selama fase aktif, $T_{\text{eff,OLR}}$ menurun secara nyata dari fase 1 ($\approx 255$~K) hingga mencapai nilai minimum pada fase 3--4 (247--248~K), kemudian meningkat kembali menuju fase 8 (256~K). Penurunan ini mengindikasikan tertekannya OLR yang berkaitan dengan peningkatan puncak awan konvektif dalam dan bertambahnya tutupan awan di troposfer atas. Sebaliknya, pada kondisi tidak aktif, $T_{\text{eff,OLR}}$ cenderung lebih tinggi dan memperlihatkan ketergantungan fase yang lebih lemah, yang mencerminkan kondisi langit yang relatif lebih cerah dan berkurangnya efek perisaian awan konvektif. Kontras ini menegaskan dominasi sistem awan konvektif dalam mengatur struktur pendinginan radiasi regional.
+ 
+Gambar~\ref{fig:variasi_fase}(c) lebih lanjut menunjukkan bahwa GHE memperlihatkan variabilitas yang terkunci pada fase terhadap evolusi MJO. Selama kondisi MJO aktif, GHE meningkat secara nyata dari fase 1 (45~K) dan mencapai puncaknya pada fase 3--4 (52--53~K), yang konsisten dengan peningkatan penyerapan dan re-emisi radiasi gelombang panjang di bawah sistem awan konvektif dalam. Amplifikasi ini mencerminkan intensifikasi jebakan efek rumah kaca yang berkaitan dengan meningkatnya ketebalan optik awan dan kandungan kelembapan troposfer. Setelah fase 4, GHE secara bertahap melemah menuju fase 8, yang mengindikasikan transisi menuju kondisi konvektif yang tertekan dan berkurangnya efisiensi jebakan radiasi. Sebaliknya, kondisi tidak aktif menunjukkan variabilitas yang lebih lemah (46--50~K) dan puncak nilai yang lebih rendah, yang mengindikasikan bahwa modulasi efek rumah kaca dikendalikan secara dominan oleh konveksi intraseasonal yang terorganisir, bukan semata-mata oleh variabilitas termodinamika latar belakang.
+ 
+Secara keseluruhan, penurunan simultan pada $T_{\text{eff,OLR}}$, peningkatan $T_s$, dan penguatan GHE selama fase 3--5 memberikan bukti kuat adanya peningkatan keterkaitan radiasi-konvektif atmosfer selama propagasi MJO aktif di atas Benua Maritim. Konsistensi sinyal yang bergantung pada fase ini mendukung interpretasi bahwa variabilitas konvektif intraseasonal memainkan peran dominan dalam mengatur intensitas efek rumah kaca regional melalui mekanisme umpan balik awan--radiasi. Hasil-hasil ini selanjutnya mengindikasikan bahwa GHE dapat berfungsi sebagai variabel diagnostik yang andal untuk mengidentifikasi tanda radiasi dari transisi konvektif yang digerakkan oleh MJO di kawasan Indonesia.
+ 
+% ============================================================
+\section{Anomali Komposit Fase Selama Kondisi MJO Aktif}
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{3.3.png}
+    \caption{Anomali komposit fase dari $T_s$, $T_{\text{eff,OLR}}$, dan GHE selama kondisi MJO aktif.}
+    \label{fig:anomali_komposit}
+\end{figure}
+ 
+Gambar~\ref{fig:anomali_komposit} menyajikan anomali komposit fase dari $T_s$, $T_{\text{eff,OLR}}$, dan GHE selama kondisi MJO aktif di atas Benua Maritim. Hasil analisis mengungkapkan modulasi yang bergantung pada fase yang jelas, konsisten dengan teori-teori yang telah mapan mengenai proses konvektif dan radiatif tropis.
+ 
+Hubungan anti-fase yang jelas teramati antara anomali $T_{\text{eff,OLR}}$ dan GHE. Selama fase konvektif aktif (Fase 3--5), $T_{\text{eff,OLR}}$ menunjukkan anomali negatif yang kuat sekitar $-3{,}5$ hingga $-4{,}0$~K, sementara GHE menunjukkan anomali positif yang substansial sekitar $+3{,}5$ hingga $+4{,}0$~K. Perilaku ini mencerminkan peningkatan konveksi dalam, di mana peningkatan tutupan awan dan kelembapan troposfer atas mengurangi OLR dan menurunkan suhu emisi efektif. Pada saat bersamaan, peningkatan opasitas atmosfer memperkuat jebakan radiasi gelombang panjang, yang mengarah pada peningkatan pemaksaan efek rumah kaca.
+ 
+Sebaliknya, selama fase tertekan (Fase 1--2 dan 7--8), anomali $T_{\text{eff,OLR}}$ menjadi positif secara kuat. Kondisi ini mengindikasikan berkurangnya tutupan awan dan lemahnya konveksi, sehingga memungkinkan lebih banyak radiasi gelombang panjang yang lolos ke luar angkasa. Hubungan terbalik antara OLR dan aktivitas konvektif ini sejalan dengan hubungan fisika dasar antara sistem awan konvektif dalam dan radiasi.
+ 
+Anomali $T_s$ tetap relatif lemah di semua fase, umumnya terbatas dalam kisaran 0,1--0,2~K, yang mengindikasikan respons permukaan yang teredam dibandingkan dengan variabel radiasi atmosfer. Variabilitas yang terbatas ini mencerminkan pengaruh inersia termal lautan, yang memoderasi fluktuasi suhu yang cepat di permukaan meskipun terdapat pemaksaan atmosfer yang kuat \cite{Lee2025}.
+ 
+% ============================================================
+\section{Anomali $T_{\text{eff,OLR}}$}
+
+ \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.93\textwidth]{hasil/3.png}
+    \caption{Peta anomali $T_{\text{eff,OLR}}$ untuk setiap fase MJO (1--8) selama 2018--2021.}
+    \label{fig:peta_teff}
+\end{figure}
+
+Gambar~\ref{fig:peta_teff} menunjukkan kemunculan struktur dipol yang jelas, dengan anomali negatif (konveksi yang menguat) terbentuk di atas Samudra Hindia selama fase 2--3 dan merambat ke arah timur menuju Indonesia selama fase 4--6, sebelum bergeser ke Pasifik bagian barat pada fase 7--8. Amplitudo anomali $T_{\text{eff,OLR}}$ di atas Benua Maritim mencapai sekitar $-2$ hingga $-3$~K selama fase konvektif puncak (4--5), sementara fase tertekan menunjukkan anomali positif sebesar $+2$ hingga $+3$~K, yang mengindikasikan pendinginan radiatif yang meningkat di bawah kondisi langit cerah.
+ 
+\subsection{Anomali $T_s$}
+ 
+ \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.93\textwidth]{hasil/2.png}
+    \caption{Peta anomali $T_s$ untuk setiap fase MJO (1--8) selama 2018--2021.}
+    \label{fig:peta_ts}
+\end{figure}
+ 
+Gambar~\ref{fig:peta_ts} menunjukkan variabilitas spasial yang lebih lemah, umumnya dalam rentang 0,5~K di semua fase. Pemanasan ringan ($+0{,}2$ hingga $+0{,}5$~K) teramati di sebagian wilayah Benua Maritim selama fase aktif (4--6), sementara pendinginan lemah ($-0{,}2$ hingga $-0{,}5$~K) terjadi selama fase tertekan. Respons yang relatif teredam ini menegaskan efek peredaman inersia termal lautan, yang membatasi penyesuaian suhu permukaan yang cepat dibandingkan dengan variabel radiasi atmosfer.
+ 
+\subsection{Anomali GHE}
+ 
+ \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.93\textwidth]{hasil/1.png}
+    \caption{Peta anomali GHE untuk setiap fase MJO (1--8) selama 2018--2021.}
+    \label{fig:peta_ghe}
+\end{figure}
+ 
+Gambar~\ref{fig:peta_ghe} menunjukkan korelasi negatif yang kuat dengan $T_{\text{eff,OLR}}$, mengkonfirmasi keterkaitan radiasi-konvektif yang kuat. Selama fase aktif (4--6), anomali GHE positif sekitar $+2$ hingga $+4$~K mendominasi wilayah Indonesia, yang mencerminkan intensifikasi jebakan radiasi gelombang panjang yang berkaitan dengan sistem awan konvektif dalam dan peningkatan kelembapan atmosfer. Sebaliknya, selama fase tertekan (1--2 dan 7--8), anomali GHE menjadi negatif ($-2$ hingga $-4$~K), yang mengindikasikan berkurangnya efisiensi jebakan efek rumah kaca akibat minimnya tutupan awan dan rendahnya opasitas atmosfer.
+
+%============================================================
+\chapter{KESIMPULAN}
+%============================================================
+
+
+% ==================== DAFTAR PUSTAKA ====================
+
+\printbibliography[title={Daftar Pustaka}]
+
+\end{document}xtit{Maritime Continent}
