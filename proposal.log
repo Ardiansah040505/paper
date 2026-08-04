@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.7.15)  22 JUL 2026 09:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.7.15)  4 AUG 2026 09:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -502,12 +502,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--137
 [2
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 151--153
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
 
  []
 
@@ -564,11 +564,11 @@ Bab I.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.202 
+l.201 
        [1
 
 ] [2] [3] [4] [5]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 297.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 296.
  (/usr/share/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [6] [7]
@@ -576,7 +576,7 @@ Bab II.
 <figs/fotoelektrik.png, id=319, 655.44875pt x 471.7625pt>
 File: figs/fotoelektrik.png Graphic file (type png)
 <use figs/fotoelektrik.png>
-Package pdftex.def Info: figs/fotoelektrik.png  used on input line 347.
+Package pdftex.def Info: figs/fotoelektrik.png  used on input line 346.
 (pdftex.def)             Requested size: 199.1693pt x 143.35106pt.
 [8
 
@@ -584,41 +584,41 @@ Package pdftex.def Info: figs/fotoelektrik.png  used on input line 347.
 <figs/compton_scattering.png, id=338, 600.2425pt x 335.2525pt>
 File: figs/compton_scattering.png Graphic file (type png)
 <use figs/compton_scattering.png>
-Package pdftex.def Info: figs/compton_scattering.png  used on input line 357.
+Package pdftex.def Info: figs/compton_scattering.png  used on input line 356.
 (pdftex.def)             Requested size: 199.1693pt x 111.2424pt.
  [9 <./figs/fotoelektrik.png> <./figs/compton_scattering.png>]
 <figs/pair production.jpg, id=356, 670.505pt x 350.30875pt>
 File: figs/pair production.jpg Graphic file (type jpg)
 <use figs/pair production.jpg>
-Package pdftex.def Info: figs/pair production.jpg  used on input line 374.
+Package pdftex.def Info: figs/pair production.jpg  used on input line 373.
 (pdftex.def)             Requested size: 318.67209pt x 166.48924pt.
  [10 <./figs/pair production.jpg>] [11]
 <figs/detektor.jpeg, id=407, 642.4pt x 355.3275pt>
 File: figs/detektor.jpeg Graphic file (type jpg)
 <use figs/detektor.jpeg>
-Package pdftex.def Info: figs/detektor.jpeg  used on input line 410.
+Package pdftex.def Info: figs/detektor.jpeg  used on input line 409.
 (pdftex.def)             Requested size: 318.67209pt x 176.26988pt.
  [12 <./figs/detektor.jpeg>]
 <figs/images (1).png, id=422, 542.025pt x 371.3875pt>
 File: figs/images (1).png Graphic file (type png)
 <use figs/images (1).png>
-Package pdftex.def Info: figs/images (1).png  used on input line 424.
+Package pdftex.def Info: figs/images (1).png  used on input line 423.
 (pdftex.def)             Requested size: 398.3386pt x 272.94669pt.
  [13 <./figs/images (1).png>] [14] [15] [16] [17]
 <figs/geant4.png, id=514, 1028.34187pt x 498.36188pt>
 File: figs/geant4.png Graphic file (type png)
 <use figs/geant4.png>
-Package pdftex.def Info: figs/geant4.png  used on input line 497.
+Package pdftex.def Info: figs/geant4.png  used on input line 496.
 (pdftex.def)             Requested size: 318.67209pt x 154.43735pt.
  [18 <./figs/geant4.png>]
 Bab III.
 <figs/flowchat.pdf, id=522, 917.34718pt x 377.49028pt>
 File: figs/flowchat.pdf Graphic file (type pdf)
 <use figs/flowchat.pdf>
-Package pdftex.def Info: figs/flowchat.pdf  used on input line 520.
+Package pdftex.def Info: figs/flowchat.pdf  used on input line 519.
 (pdftex.def)             Requested size: 483.69684pt x 199.03784pt.
 
-Overfull \hbox (4.349pt too wide) in paragraph at lines 538--557
+Overfull \hbox (4.349pt too wide) in paragraph at lines 537--556
  [][] 
  []
 
@@ -628,13 +628,13 @@ Overfull \hbox (4.349pt too wide) in paragraph at lines 538--557
 <figs/benchmark.png, id=546, 1023.07219pt x 496.85625pt>
 File: figs/benchmark.png Graphic file (type png)
 <use figs/benchmark.png>
-Package pdftex.def Info: figs/benchmark.png  used on input line 582.
+Package pdftex.def Info: figs/benchmark.png  used on input line 581.
 (pdftex.def)             Requested size: 318.67209pt x 154.75923pt.
  [21 <./figs/benchmark.png>] [22]
 <figs/geometri_pipa_simulasi.png, id=563, 1026.83624pt x 490.83376pt>
 File: figs/geometri_pipa_simulasi.png Graphic file (type png)
 <use figs/geometri_pipa_simulasi.png>
-Package pdftex.def Info: figs/geometri_pipa_simulasi.png  used on input line 643.
+Package pdftex.def Info: figs/geometri_pipa_simulasi.png  used on input line 642.
 (pdftex.def)             Requested size: 318.67209pt x 152.32915pt.
  [23 <./figs/geometri_pipa_simulasi.png>] [24] [25] (./proposal.bbl [26] [27
 
@@ -657,15 +657,15 @@ Package rerunfilecheck Info: File `proposal.out' has not changed.
 (rerunfilecheck)             Checksum: DA4E832AAE197B52C0A23828A756FADC;4818.
  ) 
 Here is how much of TeX's memory you used:
- 15639 strings out of 468995
- 250780 string characters out of 5460435
- 720223 words of memory out of 5000000
- 43708 multiletter control sequences out of 15000+600000
+ 15638 strings out of 468995
+ 250769 string characters out of 5460435
+ 720222 words of memory out of 5000000
+ 43707 multiletter control sequences out of 15000+600000
  673339 words of font info for 296 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  75i,12n,83p,1373b,593s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on proposal.pdf (40 pages, 429558 bytes).
+Output written on proposal.pdf (40 pages, 429336 bytes).
 PDF statistics:
  733 PDF objects out of 1000 (max. 8388607)
  636 compressed objects within 7 object streams

@@ -72,7 +72,7 @@
 \newcommand{\nimMahasiswa}{230322607922}
 \newcommand{\namaKBK}{FISIKA KOMPUTASIONAL DAN TEORITIK}
 \newcommand{\dosenSatu}{Dr. Hafizh Prihtiadi, S. Si., M. Si.}
-\newcommand{\nipSatu}{1988040820240610001}
+\newcommand{\nipSatu}{198804082024061001}
 \newcommand{\dosenDua}{Dr. Hari Wisodo, S. Si., M. Si.}
 \newcommand{\nipDua}{197307241998031001}
 \newcommand{\bulanTahun}{AGUSTUS 2026}
@@ -124,7 +124,7 @@
     \chapter*{LEMBAR PERSETUJUAN PEMBIMBING PROPOSAL SKRIPSI}
     \addcontentsline{toc}{chapter}{LEMBAR PERSETUJUAN}
 
-    \noindent Proposal Skripsi oleh \namaMahasiswa\ ini telah diperiksa dan disetujui untuk diuji.\\[1cm]
+    \noindent Proposal Skripsi oleh Ardiansah Nur Rohman ini telah diperiksa dan disetujui untuk diuji.\\[1cm]
 
     \begin{flushright}
     Malang, ..... Agustus 2026\\[1.5cm]
@@ -148,8 +148,7 @@
     \addcontentsline{toc}{chapter}{RINGKASAN}
     \singlespacing % Abstrak menggunakan spasi tunggal 1 pt
 
-    \noindent Rohman, Ardiansah Nur. 2026. \textit{\judulProposal}. Skripsi, Departemen Fisika, Fakultas Matematika dan Ilmu Pengetahuan Alam, Universitas Negeri Malang.\\
-    Pembimbing: (I) \dosenSatu\ (II) \dosenDua\\[1em]
+    \noindent Rohman, Ardiansah Nur. 2026. \textit{Analisis Dan Optimasi Sistem Deteksi Keretakan Pipa Berbasis Gamma Compton Backscattering Dengan Geant4 Dan Tomography}. Skripsi, Departemen Fisika, Fakultas Matematika dan Ilmu Pengetahuan Alam, Universitas Negeri Malang. Pembimbing: (I) \dosenSatu\ (II) \dosenDua\\[1em]
 
     Kegagalan sistem perpipaan migas umumnya dipicu oleh adanya keretakan yang terlambat dideteksi. Metode inpeksi konvensional terbatas karena membutuhkan kontak langsung dan akses dua sisi. Penelitian ini bertujuan menganalisi karakteristik hamburan Compton, membedakan spektrum energi pipa normal dan pipa retak, serta mengoptimasi performa sistem deteksi satu sisi berbasis \textit{Gamma Compton Backscattering}.Penelitian kuantitatif ini berbasis eksperimen komputasional menggunakan simulasi Monte Carlo Geant4 dan CERN ROOT++. Sumber radiasi yang dimodelkan adalah Cesium-137 (662 KeV) dengan enam detektor NaI(Ti) yang disusun melingkar. Pemrosesan \textit{Gaussian Smearing} diterapkan untuk mendekati resolusi detektor rill. Pemindaian dilakukan di sepanjang area pipa baja silinder berongga dengan variasi dimensi celah retakan. Data deposisi energi dan cacahan foton dianalisis menggunakan metode \textit{Relative Difference}. Citra tomografi direkonstruksi melalui \textit{backprojection} spasial dengan filter Gaussian untuk memetakan lokasi dan ukuran retakan berdasarkan hostpot intensitas maksimum. Hasil penelitia diharapkan memberikan parameter oprimal bagi perancangan purwarupa alat inspeksi pipa portabel yang non-invasif dan efisien di industri. \\[1em]
 
@@ -311,7 +310,7 @@ Untuk memberikan pemahaman yang seragam, berikut adalah definisi operasional dar
     Parameter untuk keberhasilan dari detektor dalam mengenali keretakan difokuskan pada dua parameter yaitu efisiensi deteksi dan sensitivitas. Efisiensi deteksi merupakan perbandingan atau rasio jumlah foton hamburan balik yang berhasil diserap dan dicacah oleh detektor 
     dengan total foton awal yang ditembakkan. Sedangkan sensitivitas merupakan kemampuan instrumen simulasi dalam menangkap perubahan kecil pada jumlah cacahan saat terdeteksi adanya keretakan.
 
-    \item Spektrum Energ Hamburan
+    \item Spektrum Energi Hamburan
     
     Distribusi jumlah cacahan foton terhadap tingkat energi hasil dari perstriwa hamburan compton yang terekam pada volume sensitif detektor. data ini kemudan di ektrak ke dalam format seperti txt, csv, atau root untuk kemudian dianalisis nilai puncak energinya menggunakan metode fitting Gaussian 
     melalui \textit{script} pemrograman komputasi
@@ -332,12 +331,12 @@ Untuk memberikan pemahaman yang seragam, berikut adalah definisi operasional dar
 
 \section{Konsep Dasar Fisika Radiasi dan Interaksi Materi}
 
-Fisika radiasi merupakan cabang dari fisika yang mempelajari sifat-sifat dari material radioaktif, interaksinya dengan materi radioaktif, serta dampak yang ditimbulkan oleh materi radioaktif ini. Radiasi merupakan perpindahan energi dari suatu sumber menuju ke lingkungannya dalam bentuk gelombang elektromagnetik, partikel bermuatan, atau partikel tanpa muatan \cite{acevedo2021brief}. 
+Fisika radiasi merupakan cabang dari fisika yang mempelajari sifat-sifat dari material radioaktif, interaksinya dengan material lain, serta dampak yang ditimbulkan oleh materi radioaktif ini. Radiasi merupakan perpindahan energi dari suatu sumber menuju ke lingkungannya dalam bentuk gelombang elektromagnetik, partikel bermuatan, atau partikel tanpa muatan \cite{acevedo2021brief}. 
 Radiasi dikelompokkan berdasarkan kemampuan mengionisasi atom menjadi radiasi pengion (\textit{ionizing radiation}) dan radiasi non-pengion (\textit{non-ionizing radiation}). Radiasi pengion memiliki energi yang cukup untuk melepaskan elektron dari atom sehingga menghasilkan pasangan ion, sedangkan radiasi non-pengion hanya mampu mengakitbatkan eksitasi elektron 
-tanpa menyebabkan terjadinya ionisasi. Dalam bidang teknik nuklir dan pengujian tak merusak (NDT/\textit{non destructive testing}), radiasi pengion seperti sinar gamma banyak digunakan karena memiliki \textit{penetration} atau daya tembus yang tinggi sehingga memberikan informasi mengenai bentuk struktur internal suatu material \cite{geist2024nondestructive,donner2025comparative}.
+tanpa menyebabkan terjadinya ionisasi. Dalam bidang teknik nuklir dan pengujian tak merusak (NDT/\textit{non destructive testing}), radiasi pengion seperti sinar gamma banyak digunakan karena memiliki \textit{penetration} atau daya tembus yang tinggi sehingga dapat memberikan informasi mengenai bentuk struktur internal suatu material \cite{geist2024nondestructive,donner2025comparative}.
 
 Sinar gamma merupakan salah satu bentuk radiasi elektromagnetik dengan energi yang tinggi yang dipancarkan dari inti atom yang mengalami peluruhan radioaktif \cite{geist2024nondestructive}. Beda dengan partikel alfa maupun beta, sinar gamma tidak memiliki muatan dan massa sehingga mempunyai daya tembus yang lebih besar terhadap material \cite{geist2024nondestructive}. Salah satu sumber sinar gamma yang banyak digunakan dalam 
-aplikasi industri adalah isotop Cesium-137 (Cs-137) yang memancarkan energi foton sebesar 662 KeV \cite{nguyen2011scattered}. Energi tersebut cukup tinggi sehingga mampu menembus logam dengan ketebalan tertentu dan masih memiilki probabilitas hamburan Compton (\textit{Compton scattering}) yang besar, menjadikannya sangat sesuai untuk aplikasi inspeksi pipa menggunakan metode Gamma Compton \textit{backscattering} \cite{kierans2022compton}.
+aplikasi industri adalah isotop Cesium-137 (Cs-137) yang memancarkan energi foton sebesar 662 KeV \cite{nguyen2011scattered}. Energi tersebut cukup tinggi sehingga mampu menembus logam dengan ketebalan tertentu dan masih memiilki probabilitas hamburan Compton (\textit{Compton scattering}) yang besar, menjadikannya sangat sesuai untuk aplikasi inspeksi pipa menggunakan metode gamma Compton \textit{backscattering} \cite{kierans2022compton}.
 
 Ketika radiasi gamma berinteraksi dan memasuki struktur suatu material, foton akan berinteraksi dengan atom penyusun material tersebut \cite{geist2024nondestructive}. Interaksi ini menyebabkan sebagian atau seluruh energi dari foton berpindah ke elektron ataupun atom \cite{nguyen2011scattered}. Jenis interaksi sangat dipengaruhi oleh besarnya energi yang datang dari foton dan nomor atom (Z) material yang terkena radiasi \cite{banks2025xray}. Terdapat 3 interaksi umum antara foton 
 dengan material, yaitu efek fotolistrik (\textit{photoelectric effect}), hamburan Compton (\textit{Compton scattering}), dan produksi pasangan (\textit{pair production}), ketiga interaksi meemiliki peluang yang berbeda pada setiap rentang energi sehingga membentuk karakteristik penyerapan maupun hamburan dalam material \cite{gazis2026ionizing,banks2025xray}.
@@ -359,7 +358,7 @@ rendah\cite{fitri2023correlation}. Setelah elektron keluar dari atom, kulit elek
     \label{fig:scattering}
 \end{figure}
 
-Pada energi menengah, khususnya pada rentang energi ratusan KeV seperti sinar gamma CS-137 sebesar 662 KeV, interaksi yang paling sering terjadi adalah interaksi hamburan Compton (\textit{Compton scattering})\cite{kierans2022compton}. Dalam proses interaksi ini, foton berinteraksi dengan elektron bebas atau elektron dengan ikatan lemah pada atom \cite{kierans2022compton}. Sebagian energi dari foton ditransfer ke elektron sehingga elektron terpental sebagai 
+Pada energi menengah, khususnya pada rentang energi ratusan KeV seperti sinar gamma Cs-137 sebesar 662 KeV, interaksi yang paling sering terjadi adalah interaksi hamburan Compton (\textit{Compton scattering})\cite{kierans2022compton}. Dalam proses interaksi ini, foton berinteraksi dengan elektron bebas atau elektron dengan ikatan lemah pada atom \cite{kierans2022compton}. Sebagian energi dari foton ditransfer ke elektron sehingga elektron terpental sebagai 
 elektron Compton, sedangkan sisa energi dari foton tetap bergerak namun dengan energi yang lebih rendah dan arah yang berubah sesuai dari sudut hamburan ($\theta$) \cite{nguyen2011scattered}. Energi dari hamburan Compton dapat dinyatakan dengan menggunakan persamaan compton \cite{kierans2022compton}.
 
 \begin{equation}
