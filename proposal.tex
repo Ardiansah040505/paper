@@ -126,10 +126,8 @@
 
     \noindent Proposal Skripsi oleh Ardiansah Nur Rohman ini telah diperiksa dan disetujui untuk diuji.\\[1cm]
 
-    \begin{flushright}
-    Malang, ..... Agustus 2026\\[1.5cm]
-    \end{flushright}
-
+    
+    \noindent Malang, ..... Agustus 2026\\
     \noindent
     Pembimbing I\\[2cm]
     \textbf{\dosenSatu}\\
@@ -150,7 +148,7 @@
 
     \noindent Rohman, Ardiansah Nur. 2026. \textit{Analisis Dan Optimasi Sistem Deteksi Keretakan Pipa Berbasis Gamma Compton Backscattering Dengan Geant4 Dan Tomography}. Skripsi, Departemen Fisika, Fakultas Matematika dan Ilmu Pengetahuan Alam, Universitas Negeri Malang. Pembimbing: (I) \dosenSatu\ (II) \dosenDua\\[1em]
 
-    Kegagalan sistem perpipaan migas umumnya dipicu oleh adanya keretakan yang terlambat dideteksi. Metode inpeksi konvensional terbatas karena membutuhkan kontak langsung dan akses dua sisi. Penelitian ini bertujuan menganalisi karakteristik hamburan Compton, membedakan spektrum energi pipa normal dan pipa retak, serta mengoptimasi performa sistem deteksi satu sisi berbasis \textit{Gamma Compton Backscattering}.Penelitian kuantitatif ini berbasis eksperimen komputasional menggunakan simulasi Monte Carlo Geant4 dan CERN ROOT++. Sumber radiasi yang dimodelkan adalah Cesium-137 (662 KeV) dengan enam detektor NaI(Ti) yang disusun melingkar. Pemrosesan \textit{Gaussian Smearing} diterapkan untuk mendekati resolusi detektor rill. Pemindaian dilakukan di sepanjang area pipa baja silinder berongga dengan variasi dimensi celah retakan. Data deposisi energi dan cacahan foton dianalisis menggunakan metode \textit{Relative Difference}. Citra tomografi direkonstruksi melalui \textit{backprojection} spasial dengan filter Gaussian untuk memetakan lokasi dan ukuran retakan berdasarkan hostpot intensitas maksimum. Hasil penelitia diharapkan memberikan parameter oprimal bagi perancangan purwarupa alat inspeksi pipa portabel yang non-invasif dan efisien di industri. \\[1em]
+    Kegagalan sistem perpipaan migas umumnya dipicu oleh adanya keretakan yang terlambat dideteksi. Metode inpeksi konvensional terbatas karena membutuhkan kontak langsung dan akses dua sisi. Penelitian ini bertujuan menganalisi karakteristik hamburan Compton, membedakan spektrum energi pipa normal dan pipa retak, serta mengoptimasi performa sistem deteksi satu sisi berbasis \textit{Gamma Compton Backscattering}.Penelitian kuantitatif ini berbasis eksperimen komputasional menggunakan simulasi Monte Carlo Geant4 dan CERN ROOT++. Sumber radiasi yang dimodelkan adalah Cesium-137 (662 KeV) dengan enam detektor NaI(Ti) yang disusun melingkar. Pemrosesan \textit{Gaussian Smearing} diterapkan untuk mendekati resolusi detektor rill. Pemindaian dilakukan di sepanjang area pipa baja silinder berongga dengan variasi dimensi celah retakan. Data deposisi energi dan cacahan foton dianalisis menggunakan metode \textit{Relative Difference}. Citra tomografi direkonstruksi melalui \textit{backprojection} spasial dengan filter Gaussian untuk memetakan lokasi dan ukuran retakan berdasarkan hostpot intensitas maksimum. Hasil penelitian diharapkan memberikan parameter optimal bagi perancangan purwarupa alat inspeksi pipa portabel yang non-invasif dan efisien di industri. \\[1em]
 
     \noindent \textbf{Kata kunci:} Geant4; Monte Carlo; \textit{Compton Backscattering}; Spektrum Energi; Tomografi
     \onehalfspacing % Kembali ke spasi 1.5
@@ -211,8 +209,8 @@ Dengan meningkatnya kebutuhan akan metode inspeksi non invasif yang memilki daya
 adalah menggunakan prinsip hamburan balik Compton (\textit{Compton Backscattering}) yang sensitif terhadap ketebalan dan keragaman struktur material pipa. pendekatan dengan hamburan balik sinar gamma (\textit{gamma compton backscattering}) memungkinkan deteksi cacat internal dan degradasi struktur material pipa tanpa perlu
 akses langsung ada permukaan pipa, sehingga dengan pendekatan ini deteksi dapat dilakukan pada sistem pipa yang tertanam, terisolasi, atau pada kondisi yang ekstrim \cite{Ma2025}\cite{ref17}\cite{May2022}.
 
-Detektor yang digunakan untuk mendeteksi radiasi sinar gamma yang terpancar pada sumber radioaktif seperti Cs-137 memerlukan sistem detektor yang memiliki sensitivitas tinggi, kestabilan yang tinggi, serta kemampuan akuisisi data secara kontinyu \cite{Yu2024}\cite{Prihtiadi2021}. Detektor sintilator NaI(TI) banyak digunakan karena
-memiliki \textit{light yield} sehingga cocok digunakan untuk pemantuan radiasi serta efisiensi konversi foton yang baik \cite{Adhikari2021}\cite{Hahn2025}. Sinyal yang dihasilkan dari NaI(TI) kemudian diperkuan dengan menggunakan SiPM (\textit{Silicon Photomultiplier Thube}) yang memiliki ukuran yang kompak dan stabilitas yang baik \cite{Lee2024}\cite{Carlin2025}. 
+Detektor yang digunakan untuk mendeteksi radiasi sinar gamma yang terpancar pada sumber radioaktif seperti Cs-137 memerlukan sistem detektor yang memiliki sensitivitas tinggi, kestabilan yang tinggi, serta kemampuan akuisisi data secara kontinyu \cite{Yu2024}\cite{Prihtiadi2021}. Detektor sintilator NaI(Tl) banyak digunakan karena
+memiliki \textit{light yield} sehingga cocok digunakan untuk pemantuan radiasi serta efisiensi konversi foton yang baik \cite{Adhikari2021}\cite{Hahn2025}. Sinyal yang dihasilkan dari NaI(Tl) kemudian diperkuat dengan menggunakan SiPM (\textit{Silicon Photomultiplier Thube}) yang memiliki ukuran yang kompak dan stabilitas yang baik \cite{Lee2024}\cite{Carlin2025}. 
 Kemajuan teknologi semikonduktor menjadikan SiPM sebagai alternatif untuk integrasi pada lapangan dan operasi yang kontinyu \cite{Prihtiadi2018}\cite{Yu2024_arxiv}. Sehingga teknologi ini memungkinkan untuk menganalisis spektrum energi berdasarkan karakteristik \textit{peak} (puncak) energi pada bahan radioaktif seperti Cs-137.
 
 Dalam mengembangkan detektor tersebut. penggunaan alat simulasi dengan metode monte carlo, seperti Geant4 menjadi tahap awal strategi \cite{Parishan2026}. Simulasi ini memungkinkan analisis khusus pada interaksi radiasi gamma dengan material penyusun pipa, evaluasi sistem detektor, serta optimasi tiap parameter yang digunakan, sebelum 
@@ -221,18 +219,18 @@ dilakukan implementasi secara eksperimental \cite{ref29}. Dengan menggunakan sim
 \section{Rumusan Masalah}
 Berdasarkan latar belakang yang telah diuraikan, rumusan masalah dalam penelitian ini adalah:
 \begin{enumerate}
-    \item Bagaimana karakteristk respon hamburan compton sinar gamma terhadap keberadaan \textit{crack} (keretakan) pada sistem pipa dengan Geant4?
+    \item Bagaimana karakteristik respon hamburan compton sinar gamma terhadap keberadaan \textit{crack} (keretakan) pada sistem pipa dengan Geant4?
     \item Bagaimana perbedaan spektrum pada hamburan compton antara pipa minyak utuh dan pipa yang mengalami \textit{crack} (keretakan) berdasarkan simulasi monte carlo Geant4?
     \item Bagaimana performa dari sistem detektor, yang ditinjau dari sensitivitas dan efektivitas deteksi dalam mengidentifikasi keretakan pipa minyak pada beberapa konfigurasi geometri keretakan?
 \end{enumerate}
 
 \section{Hipotesis Penelitian}
-Sebagai jawaban tentatif atas rumusan masalah, berikut adalah hipotesis yang akan diuji da;am peneltiian ini:
+Sebagai jawaban tentatif atas rumusan masalah, berikut adalah hipotesis yang akan diuji dalam peneltiian ini:
 \begin{enumerate}
     \item Keberadaan \textit{crack} (Keretakan) pada material pipa akan menurunkan kemungkinan terjadinya interaksi hamburan balik compton. Karena keretakan menandakan adanya massa yang hilang atau kepadatan material. Jumlah dari foton gamma Cs-137 akan lebih sedikit yang
     yang dipantulkan daripada kondisi pipa utuh
     \item Spektrum energi dari hamburan Compton akan mengalami penurunan pada pipa yang memiliki keretakan didalamnya pada puncak hamburan balik (\textit{Backscatter Peak}) dibandingkan pipa utuh. Bentuk dari sebaran distribusinya masih akan sama namun luasan area bawah grafik akan mengecil sebanding dengan volume keretakan
-    \item Performa dari sistem detektor sangat bergantung pada konfigurasi geometri simulasi. Efisiensi dari detektsi akan menurun seiring dengan bertambahnya jarak antara detektor, sumber, dan pipa akibat atenuasi dan pelebaran ruang. Sebaliknya, performa dari detektor akan sangat optimal pada posisi tertentu (umumnya mendekati $180^\circ$)
+    \item Performa dari sistem detektor sangat bergantung pada konfigurasi geometri simulasi. Efisiensi dari deteksi akan menurun seiring dengan bertambahnya jarak antara detektor, sumber, dan pipa akibat atenuasi dan pelebaran ruang. Sebaliknya, performa dari detektor akan sangat optimal pada posisi tertentu (umumnya mendekati $180^\circ$)
     dimana hamburan balik Compton lebih dominan daripada hamburan acak
 \end{enumerate}
 
@@ -250,7 +248,7 @@ Hasil dari penelitian ini diharapkan dapat memberikan manfaat teoritis dan prakt
 \textbf{Manfaat Praktis}
 
 \begin{enumerate}
-    \item Menghasilkan rekomendasi berupa parameter yang optimal untuk alat inspeksi. Hal ini langsung meminimalkan risiki kegagalan dan menghemat pembuatan prototype
+    \item Menghasilkan rekomendasi berupa parameter yang optimal untuk alat inspeksi. Hal ini langsung meminimalkan risiko kegagalan dan menghemat pembuatan \textit{prototype}
     \item Memberikan dasar perancangan sistem pemantauan pipa yang \textit{non-invasive} dan \textit{portable}. Sistem ini dapat diaplikasi pada pipa dengan berbagai kondisi tanpa harus menghentikan operasional dari kilang.
     \item Menyediakan alur kerja simulasi komputasi yang terintegrasi dengan analisis spektrum. Alur kerja ini dapat mempermudah dalam proses kalibrasi, fitting curva, dan pembacaan sinyal saat detektor diuji secara eksperimen di lapangan.
 \end{enumerate}
@@ -270,7 +268,7 @@ Penelitian inidibatasi pada beberapa aspek untuk menjaga fokus dan kedalaman ana
 
 \begin{enumerate}
     \item Sumber gamma yang dimodelkan di Geant4 dibatasi hanya berasal dari peluruh Cs-137 dengan energi yang terpancar pada $662 KeV$
-    \item Detektor yang dimodelkan pada Geant4 adalah detektor NaI(T) atau Sodium Iodide. Karakteristik penguatan sinyal diasumsikan merepresentasikan
+    \item Detektor yang dimodelkan pada Geant4 adalah detektor NaI(Tl) atau Sodium Iodide. Karakteristik penguatan sinyal diasumsikan merepresentasikan
     respon dari \textit{Silicon Photomultiplier} (SiPM) tanpa memperhatikan fluktuasi kelistrikan perangkat keras.
 \end{enumerate}
 
@@ -290,13 +288,13 @@ Untuk memberikan pemahaman yang seragam, berikut adalah definisi operasional dar
     Monte carlo adalah teknik komputasi yang menggunakan pengambilan sampel secara acak  (\textit{random sampling}) dan probabilitas statistik untuk memecahkan masalah kompleks pada beberapa bidang seperti matematika, fisika, dan ekonomi.
     Dalam konteks fisika khususnya fisika radiasi monte carlo digunakan untuk memodelkan lintasan dari partikel saat menembus atau berinteraksi dengan materi.
 
-    Geant4 (\textit{Geometry AND Tracking}) adalah toolkit dengan basis bahasa pemrograman C++ berorientasi objek (OOP) yang dikembangkan oleh CERN. Perangkat lunak ini dirancang khusus untuk memodelkan interaksi partikel dengan materi secara akurat.
+    Geant4 (\textit{Geometry AND Tracking 4}) adalah toolkit dengan basis bahasa pemrograman C++ berorientasi objek (OOP) yang dikembangkan oleh CERN. Perangkat lunak ini dirancang khusus untuk memodelkan interaksi partikel dengan materi secara akurat.
     Geant4 dibentuk bukan dengan \textit{user interface} biasa melainkan dibentuk dari tiga kelas arsitektur utama yaitu :
     \begin{itemize}
         \item  \textbf{\textit{Detector Construction} (Geometri dan Material)} : kelas untuk mendefinisikan bentuk geometri yang akan disimulasikan, material apa yang akan digunakan pada simulasi. Pada kelas ini keretakan akan dimodelkan sebagai ruang kosong 
         struktur pipa
         \item \textbf{\textit{Physics List} (Daftar Interaksi Fisika)} : Menentukan model fisika apa yang digunakan. Dalam penelitian ini model dari \textit{physics list} yang digunakan adalah \textit{EmStandartPhysics} dan \textit{RadioactiveDecay} untuk memodelkan 
-        interaksi hamburan balik Compton.
+        interaksi hamburan balik Compton dan peluruhan radioaktif Cs-137
         \item \textbf{\textit{Primary Generator }(Sumber Radiasi)} : Mendefinisikan energi awal dari sumber radiasi yang digunakan di simulasi, awah tembakan partikel, dan jenis partikel. Dalam penelitian ini yang digunakan adalah Cs-137 dengan energi 662 KeV 
     \end{itemize}
 
@@ -319,9 +317,9 @@ Untuk memberikan pemahaman yang seragam, berikut adalah definisi operasional dar
     
     Tata letak ruang yang digunakan untuk menguji performa dari sistem detektor di dalam simulasi. Konfigurasi ini diukur dari sudut penempatan detektor untuk menangkap hamburan balik secara maksimal pada permukaan pipa
 
-    \item Sistem Deteksi NaI(TI)
+    \item Sistem Deteksi NaI(Tl)
     
-    Model detektor radiasi yang dibangun dalam lingkungan simulasi Geant4. NaI(TI) didefinisikan sebagai material yang dapat menyerap energi radiasi, sedangkan karakteristik SiPM secara operasional diasumsikan terintegrasi langsung pada keluaran resolusi energi tanpa memperdulikan noise kelistrikan perangkat keras.
+    Model detektor radiasi yang dibangun dalam lingkungan simulasi Geant4. NaI(Tl) didefinisikan sebagai material yang dapat menyerap energi radiasi, sedangkan karakteristik SiPM secara operasional diasumsikan terintegrasi langsung pada keluaran resolusi energi tanpa memperdulikan noise kelistrikan perangkat keras.
 
 \end{enumerate}
 % ==========================================
@@ -384,7 +382,7 @@ Selain mengalami hamburan, intensitas dari sinar gamma juga akan mengalami penur
     I = I_0 e^{-\mu x}
 \end{equation}
 
-Dengan $I_0$ adalah intensitas awal, $I$ intensitas setelah melewati material, $\mu$ koefisien atenuasi linier, dan $x$ merupakan ketebalan material. Nilai koefisien atenuasi bergantung pada energi foton dan jenis dari material yang berinteraksi \cite{aloraini2022design}. Sehingga nilai atenuasi tersebut dapat digunakan untuk mengindentifikasi adanya perubahan struktur atau adanya cacat seperti korosi, retak, atau lubang \cite{alanazi2024evaluating}. Perubahan ini 
+Dengan $I_0$ adalah intensitas awal, $I$ adalah intensitas setelah melewati material, $\mu$ adalah koefisien atenuasi linier, dan $x$ merupakan ketebalan material. Nilai koefisien atenuasi bergantung pada energi foton dan jenis dari material yang berinteraksi \cite{aloraini2022design}. Sehingga nilai atenuasi tersebut dapat digunakan untuk mengindentifikasi adanya perubahan struktur atau adanya cacat seperti korosi, retak, atau lubang \cite{alanazi2024evaluating}. Perubahan ini 
 yang dimanfaatkan dalam sistem deteksi keretakan pipa berbasis hamburan balik sinar gamma \cite{alanazi2024evaluating}.
 
 Pemahaman mengenai mekanisme interaksi dari radiasi gamma dengan material merupakan dasar penting dalam tahap pengembangan sistem inspeksi tanpa merusak \cite{azmi2023gamma}. Pada energi 662 KeV dari sumber Cs-137, hamburan Compton menjadi mekanisme dominan yang terjadi sehingga sangat sesuai jika digunakan sebagai prinsip \textit{tomography} untuk mendeteksi perubahan densitas maupun mendeteksi adanya retak dalam struktur pipa \cite{olshanoski2022multi}. Oleh 
@@ -398,8 +396,8 @@ sinar gamma, sistem deteksi berfungsi mengukur jumlah foton yang diterima dan en
 Secara umum sistem deteksi radiasi memiliki komponen utama yang terdiri dari sumber radiasi, detektor, rangkaian elektronika pengolah sinyal, sistem akuisisi data, dan perangkat lunak analisis \cite{etim_digital}. Ketika radiasi memasuki sistem detektor, energi dari radiasi diubah menjadi pulsa listrik melalui mekanisme interaksi tertentu yang bergantung pada jenis bahan detektornya \cite{djokorayono2023gamma}. Pulsa listrik itu kemudian diperkuat oleh penguat (\textit{amplifier}) dan \textit{preamplifier} 
 sebelum dikonversi menjadi data digital menggunakan ADC (\textit{analog to digital converter}) \cite{etim_digital}. Kemudian data dianalisis menggunakan perangkat lunak spektroskopi sehingga diperoleh informasi mengenai energi maupaun intensitas dari radiasi yang terpancar oleh sumber yang mengenai detektor. Sistem seperti ini banyak digunakan pada aplikasi inspeksi gamma berbasis hamburan balik Compton karena mampu menghasilkan data spektrum energi secara langsung \cite{zhang2023research}.
 
-Pada penelitian ini karena menggunakan prinsip interaksi hamburan balik Compton, detektor radiasi harus mampu membedakan hamburan dari foton yang berasal dari berbagai posisi didalam material \cite{Yu2024}. Oleh karena itu, karakteristik detektor seperti efisiensi deteksi, resolusi energi, waktu respons, dan sensitivitas sangat menentukan kualitas data yang diperoleh \cite{Yu2024_arxiv}. Jenis detektor yang sering digunakan adalah detektor sintilator Sodium Iodide yang diaktivasi Talium NaI(TI) karena 
-memiliki efisiensi deteksi yang tinggi pada sinar gamma, \textit{cost} yang rendah, serta ukuran dan dimensi kristal yang dapat dibuat lebih besar sehingga meningkatkan probabilitas adanya \textit{cross section} terhadap foton \cite{Prihtiadi2018}. Meskipun energi resolusi yang dimiliki NaI(TI) lebih kecil dibandingkan detektor semikonduktor yang lain seperti HPGe, NaI(TI) menjadi pilihan utama dalam berbagai aplikasi industri karena praktis dan ekonomis \cite{Yu2024}.
+Pada penelitian ini karena menggunakan prinsip interaksi hamburan balik Compton, detektor radiasi harus mampu membedakan hamburan dari foton yang berasal dari berbagai posisi didalam material \cite{Yu2024}. Oleh karena itu, karakteristik detektor seperti efisiensi deteksi, resolusi energi, waktu respons, dan sensitivitas sangat menentukan kualitas data yang diperoleh \cite{Yu2024_arxiv}. Jenis detektor yang sering digunakan adalah detektor sintilator Sodium Iodide yang diaktivasi Talium NaI(Tl) karena 
+memiliki efisiensi deteksi yang tinggi pada sinar gamma, \textit{cost} yang rendah, serta ukuran dan dimensi kristal yang dapat dibuat lebih besar sehingga meningkatkan probabilitas adanya \textit{cross section} terhadap foton \cite{Prihtiadi2018}. Meskipun energi resolusi yang dimiliki NaI(Tl) lebih kecil dibandingkan detektor semikonduktor yang lain seperti HPGe, NaI(Tl) menjadi pilihan utama dalam berbagai aplikasi industri karena praktis dan ekonomis \cite{Yu2024}.
 
 Spektroskopi radiasi merupakan teknik analisis yang memanfaatkan distribusi energi yang diterima detektor untuk memperoleh informasi mengenai sumber radiasi maupun material yang sedang berinteraksi \cite{channappa2025standardization}. Dalam spektroskopi gamma, setiap bahan radioaktif memiliki energi foton yang berbeda sehingga dapat diidentifikasi melalui puncak (\textit{photopeak}) pada spektrum energinya \cite{mcgregor2018materials}. Selain \textit{photopeak}, spektrum gamma juga mengandung \textit{compton continuum}, \textit{compton edge}, \textit{backscatter peak}, 
 dan \textit{escape peak} yang muncul akibat berbagai mekanisme interaksi foton dengan materi atau detektor \cite{kierans2022compton}. Analisis terhadap puncak-puncak tersebut memungkinkan identifikasi radionuklida serta mengevaluasi kondisi internal material yang sedang diamati \cite{aloraini2022design}.
@@ -415,7 +413,7 @@ Salah satu parameter penting dalam spektroskopi gamma adalah resolusi energi (\t
 \begin{equation}
     R = \frac{FWHM}{E} \times 100\%
 \end{equation}
-dengan $R$ adalah resolusi energi, $FWHM$ merupakan lebar puncak pada setengah tinggi maksimum, dan $E$ adalah \textit{photopeak} \cite{ababneh2024sensitivity}. Nilai resolusi yang kecil menandakan kemampuan detektor yang baik dalam memisahkan puncak energi yang menghasilkan identifikasi bahan radioaktif yang lebih akurat \cite{demir2021determination}. Pada detektor NaI(TI), resolusi energi untuk foton Cs-137 umumnya berada pada kisaran 6-8$\%$, sedangkan pada detektor HPGe nilia resolusi 
+dengan $R$ adalah resolusi energi, $FWHM$ merupakan lebar puncak pada setengah tinggi maksimum, dan $E$ adalah \textit{photopeak} \cite{ababneh2024sensitivity}. Nilai resolusi yang kecil menandakan kemampuan detektor yang baik dalam memisahkan puncak energi yang menghasilkan identifikasi bahan radioaktif yang lebih akurat \cite{demir2021determination}. Pada detektor NaI(TI), resolusi energi untuk foton Cs-137 umumnya berada pada kisaran 6-8$\%$, sedangkan pada detektor HPGe nilai resolusi 
 energi berkisar pada 1\% \cite{amitasari2015pengaruh}.
 
 \begin{figure}[htbp]
@@ -433,7 +431,7 @@ rekonstruksi citra tomografi guna mengidentifikasi adanya cacat pada material.
 
 \section{\textit{Non Destructive Testing} (NDT) Pada Pipa}
 
-\textit{Non-destructive testing} (NDT) merupakan sekumpulan metode inspeksi yang digunakan untuk mengevaluasi kondisi struktur internal suatu material, komponen, maupun struktur tanpa menyebabkan kerusakan pada objek yang sedang diamati \cite{silva2023review}. Berbeda dengan metode \textit{destructive testing} yang mengharuskan spesimen mengalami kerusakan saat proses inspeksi, metode NDT memungkinkan objek tetap dapat digunakan pasca inspeksi \cite{abdollahi2025non}. Oleh karena itu, NDT banyak diterapkan pada beberapa industri salah 
+\textit{Non-destructive testing} (NDT) merupakan sekumpulan metode inspeksi yang digunakan untuk mengevaluasi kondisi struktur internal suatu material, komponen, maupun struktur tanpa menyebabkan kerusakan pada objek yang sedang diamati \cite{silva2023review}. Berbeda dengan metode \textit{destructive testing} yang mengharuskan spesimen mengalami kerusakan saat proses inspeksi, metode NDT memungkinkan objek tetap dapat digunakan pasca inspeksi \cite{abdollahi2025non}. Karena itu, NDT banyak diterapkan pada beberapa industri salah 
 satu contohnya adalah industri minyak dan gas (migas) \cite{wang2024basic}. Penerapan NDT bertujuan untuk mendeteksi cacat, retak, korosi, penipisan dinding pada pipa migas, maupun ketidaksempurnaan lainya sejak dini sehingga dapat mencegah kegagalan sistem perpipaan yang berpotensi merugikan banyak hal \cite{tian2024non}.
 
 Pada industri migas, pipa merupakan komponen yang utama dalam distribusi fluida bertekanan tinggi \cite{wang2024basic}. Selama masa operasi, pipa sering kali mengalami degradasi atau penurunan kualitas akibat dari korosi internal, korosi eksternal, erosi, kelelahan material (\textit{fatigue}), maupun retak akibat tegangan (\textit{stress corossion cracking}) \cite{odor2024advanced}. Kerusakan tersebut menyebabkan berkurangnya lapisan ketebalan dinding pipa sehingga meningkatkan terjadinya kebocoran maupun kegagalan struktur \cite{tian2024non}. Oleh karena itu, 
@@ -452,7 +450,7 @@ hamburan dipengaruhi oleh densitas atau kepadatan elektron material sehingga per
 Perkembangan teknologi komputasi juga mendorong pemanfaatan simulasi monte carlo dalam pengembangan sistem inpeksi tanpa merusak (NDT) berbasis radiasi \cite{qin2023study}. Simulasi menggunakan \textit{software} Geant4 memungkinkan peneliti mensimulasikan interaksi radiasi dengan material secara akurat sehingga berbagai konfigurasi sumber, detektor, energi gamma, serta geometri objek dapat dianalisis tanpa harus melakukan eksperimen fisik yang memiliki \textit{cost} tinggi \cite{agostinelli2003geant4}. Selain itu, hasil dari simulasi dapat digunakan untuk 
 mengoptimasi posisi detektor, jumlah detektor, sudut hamburan, serta parameter akuisisi data guna meningkatan sensitivitas sistem dalam mendeteksi cacat yang berukuran orde mikroskopis \cite{qin2023study}.
 
-Pada penelitian ini menggunakan metode gamma compton \textit{backscatter} sebagai teknik inspeksi \textit{non-destruktif} untuk mendeteksi cacat pada pipa migas. Sistem inspeksi dimodelkan dengan Geant4 dengan sumber radiasi gamma Cesium-137 dan detektor NaI(TI). Informasi atau hasil output simulasi berupa distribusi jumlah foton hamburan kemudian dianalisis menggunakan metode rekonstruksi citra tomografi untuk menggambarkan posisid dan ukuran keretakan di dalam pipa. Pendekatan ini diharapkan mampu menghasilkan 
+Pada penelitian ini menggunakan metode gamma compton \textit{backscatter} sebagai teknik inspeksi \textit{non-destruktif} untuk mendeteksi cacat pada pipa migas. Sistem inspeksi dimodelkan dengan Geant4 dengan sumber radiasi gamma Cesium-137 dan detektor NaI(TI). Informasi atau hasil output simulasi berupa distribusi jumlah foton hamburan kemudian dianalisis menggunakan metode rekonstruksi citra tomografi untuk menggambarkan posisi dan ukuran keretakan di dalam pipa. Pendekatan ini diharapkan mampu menghasilkan 
 sistem inspeksi yang efektif, aman, dan dapat diaplikasikan pada kondisi lapangan memiliki keterbatasan akses terhadap objek.
 
 \section{Pemodelan Transportasi Partikel dengan Monte Carlo Geant4}
@@ -470,7 +468,7 @@ Pada metode monte carlo, jarak tempuh partikel menuju interaksi berikutnya tidak
 \begin{equation}
     s = -\lambda ln (\xi)
 \end{equation}
-dengan $s$ merupakan panjang lintasan partikel sebelum mengalami interaksi, sedangkan $\xi$ adalah bilangan acak yang terdistribusi seragam pada rentang $ 0 < \xi < 1$ \cite{agma2025simulasi}. Persamaan ini menjadi dasar algoritma perandoman (\textit{particle tracking}) pada hampir seluruh \textit{software} simulasi monte carlo, termasuk Geant4 \cite{agostinelli2003geant4}.
+dengan $s$ merupakan panjang lintasan partikel sebelum mengalami interaksi, sedangkan $\xi$ adalah bilangan acak yang terdistribusi seragam pada rentang $ 0 < \xi < 1$ \cite{agma2025simulasi}. Persamaan ini menjadi dasar algoritma pengacakan (\textit{particle tracking}) pada hampir seluruh \textit{software} simulasi monte carlo, termasuk Geant4 \cite{agostinelli2003geant4}.
 
 Selama proses transportasi partikel, setiap foton yang terpancar akan mengalami berbagai kemungkinan terjadinya interaksi sesuai dengan probabilitas yang ditentukan oleh penampang lintang material \cite{agma2025simulasi}. Kemungkinan tersebut dihitung berdasarkan total penampang lintang yang merupakan penjumlahan dari seluruh proses interaksi yang mungkin terjadi \cite{agma2025simulasi}.
 \begin{equation}
@@ -509,7 +507,7 @@ Compton, hingga foton hamburan diterima oleh detektor. Data hasil simulasi berup
 \section{Rancangan Penelitian}
 Penelitian ini dirancang sebagai studi ekspimen kompuatasional kuantitatif untuk mengevaluasi secara sistematis sensitivitas dari metode hamburan balik 
 Compton untuk mendeteksi adanya anomali berupa keretakan (\textit{crack}) pada suatu sistem perpipaan. Rancangan penelitian ini menggunakan \textit{framework} 
-simulasi monte carlo dengan menggunakan \textit{software} Geant4, dimana simulasi fsika (penembakan dan pelakakan partikel foton dari sumber Cesium-137) dijalankan 
+simulasi monte carlo dengan menggunakan \textit{software} Geant4, dimana simulasi fisika (penembakan dan pelakakan partikel foton dari sumber Cesium-137) dijalankan 
 sepenuhnya di dalam lingkungan simulasi Geant4. Kemudian, setelah dilakukan simulasi data hasil pelacakan dieksekusi menggunakan skrip analisis komputasi yaitu CERN ROOT++ 
 \textit{Framework Analysis} yang berbasis C.
 
@@ -560,7 +558,7 @@ Penelitian ini dilaksanakan dalam waktu kurun 6 Bulan, dimulai dari bulan Agustu
 \subsection{Variabel Penelitian}
 \begin{itemize}
     \item Variabel Bebas    : Ukuran keretekan, bentuk keretakan
-    \item variabel Terikat  : Spektrum energi hamburan balik, jumlah cachan, fluk gamma, Nilai perbedaan relatif, citra tomograffi
+    \item variabel Terikat  : Spektrum energi hamburan balik, jumlah cacahan, fluk gamma, Nilai perbedaan relatif, citra tomografi
     \item Variabel Kontrol  : Jumlah detektor, sumber radiasi (Cesium-137), geometri simulasi.
 \end{itemize}
 
@@ -587,7 +585,7 @@ Secara statistik, nilai eror dari hasil simulasi monte carlo mengkuti distribusi
 \begin{equation}
     \sigma N = \sqrt{N}
 \end{equation}
-dengan N adalah jumlah cacahan yang dterima dari setiap \textit{channel}. Ketidakpastian relatif dari simulasi dapat dihitung dengan menggunakan persamaan
+dengan $N$ adalah jumlah cacahan yang diterima dari setiap \textit{channel}. Ketidakpastian relatif dari simulasi dapat dihitung dengan menggunakan persamaan
 \begin{equation}
     \delta = \frac{\sigma N}{N} \times 100\% = \frac{1}{\sqrt{N}} \times 100\%
 \end{equation}
@@ -608,7 +606,7 @@ Secara numerik, energi hasil \textit{smearing} diperoleh dengan menambahkan bila
     E_{smear} = E + \sigma Z
 \end{equation}
 dengan $E_{smear}$ adalah energi setelah dilakukan proses \textit{gaussian smearing}, $E$ merupakan energi hasil simulasi Geant4, $\sigma$ adalah standart deviasi dari 
-distribusi gaussian, sedangankan $Z$ merupakan bilangan yang acak yang mengikuti distribusi normal standart $N(0,1)$. Persamaan ini digunakan pada proses setelah pemrosesan untuk 
+distribusi gaussian, sedangkan $Z$ merupakan bilangan yang acak yang mengikuti distribusi normal standart $N(0,1)$. Persamaan ini digunakan pada proses setelah pemrosesan untuk 
 menghasilkan spektrum energi yang mendekati respon detektor NaI(TI) pada kondisi eksperimen.
 
 Nilai simpangan baku diperoleh dari hubungan antara nilai \textit{Full Width at Half Maximum} (FWHM) dan resolusi energi pada detektor,
@@ -624,17 +622,17 @@ digunakan sebagai parameter utama pada proses \textit{Gaussian Smearing}.
 
 \subsection{Implementasi Geometri Pipa dan Detektor NaI(Tl)}
 Setelah model simulasi divalidasi, tahap selanjutnya adalah membangun geometri simulasi sistem deteksi keretakan dengan menggunakan \textit{software} Geant4. Implementasi dilakukan untuk 
-membuat bentuk konfigurasi dari sistem inspeksi berbasis Gamma Compton \textit{Backscatter}, yang terdisi dari pipa, sumber radiasi gamma Cesium-137, dan detektor NaI(TI). Model diharapkan mampu 
+membuat bentuk konfigurasi dari sistem inspeksi berbasis Gamma Compton \textit{Backscatter}, yang terdiri dari pipa, sumber radiasi gamma Cesium-137, dan detektor NaI(TI). Model diharapkan mampu 
 menggambarkan kondisi inspeksi secara nyata sehingga proses transportasi partikel dapat disimulasikan secara akurat.
 
-Objek yang disimulaskan berupa silinder berongga dengan menggunakan kelas \textit{G4Tubs}, dengan parameter berupa jar-jari dalam, jari-jari luar, serta panjang dari pipa. Material penyusun pipa 
+Objek yang disimulaskan berupa silinder berongga dengan menggunakan kelas \textit{G4Tubs}, dengan parameter berupa jari-jari dalam, jari-jari luar, serta panjang dari pipa. Material penyusun pipa 
 didefinisikan berdasarkan komposisi material pipa migas dengan menggunakan \textit{database} material NIST yang ada pada Geant4. Untuk membuat kondisi retak beberapa simulasi ditambahkan dengan ukuran dan 
 posisi keretakan tertentu.
 
-Sumber gamma yang digunakan adalah radionujklida Cesium-137 yang memancarkan energi sebesar $661,657 KeV$. Posisi sumber berada diluar pipa dengan orientasi tegak lurus terhadap permukaan pipa sehingga 
-foton dapat dipancarkan dan berinteraks dengan pipa menghasilkan hamburan. Konfigurasi ini dipilih karena dapat mendeteksi adanya hamburan balik karena detektor dan sumber ada di sisi yang sama.
+Sumber gamma yang digunakan adalah radionuklida Cesium-137 yang memancarkan energi sebesar $661,657 KeV$. Posisi sumber berada diluar pipa dengan orientasi tegak lurus terhadap permukaan pipa sehingga 
+foton dapat dipancarkan dan berinteraksi dengan pipa menghasilkan hamburan. Konfigurasi ini dipilih karena dapat mendeteksi adanya hamburan balik karena detektor dan sumber ada di sisi yang sama.
 
-Sistem detektor terdiri atas enam buah detektor NaI(TI) yang disusu secara melingkar (mengelilingi sumber radiasi) yang ditunjukkan oleh Gambar \ref{fig:geometri_pipa}. Setiap detektor dimodelkan sebagai silinder menggunakan 
+Sistem detektor terdiri atas enam buah detektor NaI(TI) yang disusun secara melingkar (mengelilingi sumber radiasi) yang ditunjukkan oleh Gambar \ref{fig:geometri_pipa}. Setiap detektor dimodelkan sebagai silinder menggunakan 
 kelas \textit{G4Tubs} dan ditempatkan pada jarak tetap terhadap sumber radiasi dengan orientasi menghadap ke permukaan pipa. Konfgurasi ini untuk menangkap sudut deteksi hamburan balik. Sehingga probabilitas foton hamburan 
 mencapai volume sensitif detektor dapat dimaksimalkan.
 \begin{figure}[htbp]
@@ -644,7 +642,7 @@ mencapai volume sensitif detektor dapat dimaksimalkan.
     \label{fig:geometri_pipa}
 \end{figure}
 
-Selama proses simulasi, foton gamma yang dpancarkan oleh Cesium-137 ditransportaskan melalu material piap dengan model fisika elektromagnetka pada Geant4. Pada rentang energi 662 KeV interaksi yang dominan terjadi adalah hamburan compton 
+Selama proses simulasi, foton gamma yang dpancarkan oleh Cesium-137 ditransportasikan melalu material pipa dengan model fisika elektromagnetik pada Geant4. Pada rentang energi 662 KeV interaksi yang dominan terjadi adalah hamburan compton 
 mengikuti persamaan 
 \begin{equation}
     E' = \frac{E}{1 + \frac{E}{m_e c^2}(1 - \cos\theta)}
@@ -656,7 +654,7 @@ Energi yang terdeposit pada volume sensitif direkam menggunakan mekanisme \texti
 \begin{equation}
     E_{dep} = \sum_{i=1}^{n} \Delta E_i
 \end{equation}
-dengan $E_{dep}$ adalah total energi yang terdeteksi oleh detekor dan $\Delta E_i$ adalah yang ditransfer pada setiap proses interaksi. Selain energi deposisi, jumlah foton yang terdeteksi juga akan dicatat untuk setiap detektor dan dinyatakan sebagai 
+dengan $E_{dep}$ adalah total energi yang terdeteksi oleh detekor dan $\Delta E_i$ adalah energi yang ditransfer pada setiap proses interaksi. Selain energi deposisi, jumlah foton yang terdeteksi juga akan dicatat untuk setiap detektor dan dinyatakan sebagai 
 \begin{equation}
     N = \sum_{i=1}^{n} 1
 \end{equation}
@@ -664,29 +662,29 @@ dengan $N$ merupakan jumlah foton yang dterima oleh volume sensitif.
 
 \subsection{Implementasi Sistem Pemindaian}
 Setelah geometri sistem berhasil diimplementasikan, tahap berikutnya adalah membuat sistem pemindaian (\textit{scanning}) untuk memperoleh data hamburan pada setiap posisi pengukuran. Pada penelitian ini, objek pipa dibuat tetap (\textit{fixed geometry}), sedangkan 
-sumber radiasi Cs-137 dan enam detektor NaI(TI) yang bergerak secara bersamaan sebaga satu modul pada sepanjang area inspeksi. Konfigurasi tersebut menerapkan prinsip \textit{Gamma Compton Backsactter}, sehingg seluruh pemindaian dilakukan hanya dar satu sisi pipa saja.
+sumber radiasi Cs-137 dan enam detektor NaI(TI) yang bergerak secara bersamaan sebaga satu modul pada sepanjang area inspeksi. Konfigurasi tersebut menerapkan prinsip \textit{Gamma Compton Backsactter}, sehingga seluruh pemindaian dilakukan hanya dari satu sisi pipa saja.
 
-Pemindauan dilakukan dengan menggunakan koordinat kartesiusn dengan membagi area inspeksi menjadi banyak ttik pengamatan (\textit{scan points}). Posisi sumber dan detektor pada seiap titik dinyatakan dengan persamaan \
+Pemindaian dilakukan dengan menggunakan koordinat kartesian dengan membagi area inspeksi menjadi banyak titik pengamatan (\textit{scan points}). Posisi sumber dan detektor pada setiap titik dinyatakan dengan persamaan \
 \begin{equation}
     P_i = (x_i, y_i)
 \end{equation}
-Dengan $x_i$ dan $y_i$ merupakan koordinat titik pemindauan ke-i. Jumlah keseluruh titik pemindaian dihitung menggunakan
+Dengan $x_i$ dan $y_i$ merupakan koordinat titik pemindauan ke-i. Jumlah keseluruhan titik pemindaian dihitung menggunakan
 \begin{equation}
     N_s = N_x \times N_y
 \end{equation}
 dengan $N_p$ merupakan jumlah partkel primer pada setiap titik pemindaian 
 
 Selama proses simulasi berlangsung, setiap detektor merekan deposisi energi serta jumlah cacahan foton hamburan yang diterima oleh detektor sensitif. informasi tersebut kemudian disimpan sebagai \textit{output} simulasi yang berisi, koordinat pemindaian, \textit{detector id}, jumlah 
-partikel primer, deposisi energi dan jumlah cacagan foton untuk setiap titik pengukuran.
+partikel primer, deposisi energi dan jumlah cacahan foton untuk setiap titik pengukuran.
 
-Data hasil pemindaian dari seluruh titk selanjutnya digabung menjad satu basis data (\textit{dataset}) yang digunakan sebagau \textit{input} pada tahap evaluasi dan analisi. Dataset tersebut menjadi dasar dari proses normalisasi, perhitungan parameter, rekonstruksi untuk mengidentifikasi adanya 
+Data hasil pemindaian dari seluruh titk selanjutnya digabung menjad satu basis data (\textit{dataset}) yang digunakan sebaga i\textit{input} pada tahap evaluasi dan analisi. Dataset tersebut menjadi dasar dari proses normalisasi, perhitungan parameter, rekonstruksi untuk mengidentifikasi adanya 
 keretakan pada pipa
 
 \subsection{Evaluasi dan Analisis data}
 Data hasil simulasi Geant4 berupa koordinat titik pemindaian, identitas detektor, jumlah partikel primer, energi deposisi, dan jumlah cacahan pada setiap detekor terlebih dahulu dijadikan satu dataset untuk memudahkan proses analisis. Seluruh proses pengolahan data dilakukan dengan menggunakan 
-\textit{software} ROOT CERN sehingga diperoleh parameter kuantitatif yang digunakan untuk mengevaluasi respon sistem deteks terhadap keberadaan keretakan pada pipa.
+\textit{software} ROOT CERN sehingga diperoleh parameter kuantitatif yang digunakan untuk mengevaluasi respon sistem deteksi terhadap keberadaan keretakan pada pipa.
 
-Tahap awal analisis dilakuakn melalui normalisasi jumlah cacahan terhadap jumlah partikel primer untuk menghilangkan pengaruh variasi statistk selama proses simulasi. Nilai cacahan yang dinormalikan dapat dihitung dengan menggunakan
+Tahap awal analisis dilakukan melalui normalisasi jumlah cacahan terhadap jumlah partikel primer untuk menghilangkan pengaruh variasi statistk selama proses simulasi. Nilai cacahan yang dinormalikan dapat dihitung dengan menggunakan
 \begin{equation}
     C_{norm} = \frac{N_{count}}{N_p}
 \end{equation}
@@ -698,20 +696,20 @@ Perubahan respon sistem deteksi akibat adanya keretakan dievaluasi menggunakan m
 \end{equation}
 dengan $C_{crack}$ merupakan cacahan ternormalisasi pada kondisi pipa retak dan $C_{normal}$ merupakan cacahan ternormalisasi pada kondisi pipa utuh. Distribusi nilai RD digunakan sebagai parameter utama untuk melihat perubahan intensitas hamburan yang disebabkan oleh adanya keretakan pada pipa
 
-Karena data hasil pemindaian diperoleh dalam bentuk titik-titik diskrit, dilakukan dengan interpolasi spasial untuk membentuk distribusi data kontinu pada bidang yang diamati. Selanjutnya menerapkan Gaussian filter untuk mengurangi fluktuasi statistik akibat adanya eror pada simulasi Monte Carlo 
+Karena data hasil pemindaian diperoleh dalam bentuk titik-titik diskrit, hasil tersebut perlu diolah dengan interpolasi spasial untuk membentuk distribusi data kontinu pada bidang yang diamati. Selanjutnya menerapkan Gaussian filter untuk mengurangi fluktuasi statistik akibat adanya eror pada simulasi Monte Carlo 
 tanpa menghilangkan karakteristik citra utama
 \begin{equation}
     G(x,y) = \frac{1}{2\pi\sigma^2} exp(- \frac{x^2 + y^2}{2\sigma^2})
 \end{equation}
 dengan $\sigma$ merupakan simpangan baku distribusi Gaussian yang mengontrol tingkat penghalusan citra
 
-Citra tomografi kmeudian direkonstruksi menggunakan metode \textit{backprojection}, yaitu dengan menjumlahkan kontribusi nilai \textit{Relative Difference} dari seluruh posisi \textit{scanning} terhadap piksel citra. intensitas dari rekonstruksi dinyatakan sebagai
+Citra tomografi kemudian direkonstruksi menggunakan metode \textit{backprojection}, yaitu dengan menjumlahkan kontribusi nilai \textit{Relative Difference} dari seluruh posisi \textit{scanning} terhadap piksel citra. intensitas dari rekonstruksi dinyatakan sebagai
 \begin{equation}
     I(x,y) = \sum_{i = 1}^{N} RD_i W_i (x,y)
 \end{equation}
 dengan $I(x,y)$ merupakan intensitas piksel pada koordinat (x,y), $RD_i$ adalah nilai \textit{Relative Difference} pada titik pemindaian ke-i, sedangkan $W_i(x,y)$ merupakan fungsi pembobot yang menggambarkan kontribusi dari masing - masing titik pemindaian terhadap piksel citra.
 
-Hasil rekonstruks kemudian devaluasi berdasarkan distribusi dar intensitas untuk mengidentifikasi dimana okasi keretakan muncul. Posisi keretakan ditentukan melalui adanya intensitas maksimum (\textit{hotspot}) yang dirumuskan sebagai 
+Hasil rekonstruksi kemudian dievaluasi berdasarkan distribusi dar intensitas untuk mengidentifikasi dimana lokasi keretakan muncul. Posisi keretakan ditentukan melalui adanya intensitas maksimum (\textit{hotspot}) yang dirumuskan sebagai 
 \begin{equation}
     I_{max} = max[I(x,y)]
 \end{equation}

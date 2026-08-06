@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex proposal"] 1784688796.53086 "proposal.aux" "proposal.bbl" "proposal" 1785811956.40351 0
+["bibtex proposal"] 1785911424.53866 "proposal.aux" "proposal.bbl" "proposal" 1785911426.75997 0
   "./ref.bib" 1784454704.69064 32377 99042ce3d98e8fb2cfebb0c5c1b1821c ""
   "/usr/share/texmf-dist/bibtex/bst/base/unsrt.bst" 1775415801 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "proposal.aux" 1785811955.93437 12202 e3b3095ee9df36c10151748ebef90a2c "pdflatex"
+  "proposal.aux" 1785911426.43227 12202 b3a8b1de3216c4cee3b3b9e29778a97c "pdflatex"
   (generated)
   "proposal.bbl"
   "proposal.blg"
   (rewritten before read)
-["pdflatex"] 1785811953.38435 "/home/ryan-diferensial/Documents/Draft_Proposal/Proposal/proposal.tex" "proposal.pdf" "proposal" 1785811956.40394 0
-  "/home/ryan-diferensial/Documents/Draft_Proposal/Proposal/proposal.tex" 1785811953.00859 67394 040235aee267a2ed7c311caee4281d69 ""
+["pdflatex"] 1785911424.64971 "/home/ryan-diferensial/Documents/Draft_Proposal/Proposal/proposal.tex" "proposal.pdf" "proposal" 1785911426.76028 0
+  "/home/ryan-diferensial/Documents/Draft_Proposal/Proposal/proposal.tex" 1785911422.02326 67448 165debd7f7a990f289389a5777fe462b ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1775415801 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1775415801 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1775415801 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -138,13 +138,13 @@
   "figs/images (1).png" 1784454056.23122 11713 e75bc13d8391704a55ca6f41c130c26d ""
   "figs/images.png" 1781256333.90165 13049 a8bec865489f2137b0ce3138dc7a06aa ""
   "figs/pair production.jpg" 1783042785.80693 69853 6e8a6cd2f3a2a7ea6c8e9103f25de75c ""
-  "proposal.aux" 1785811955.93437 12202 e3b3095ee9df36c10151748ebef90a2c "pdflatex"
-  "proposal.bbl" 1784688796.62183 18710 7fbb7c3594627337e3f12fa1776c1ed4 "bibtex proposal"
-  "proposal.lof" 1785811955.94058 1084 2f352ddcfd836bcc22028d2bb878a787 "pdflatex"
-  "proposal.lot" 1785811955.94058 199 2ce3f3dcb0de2a29352e3bef358d25ba "pdflatex"
-  "proposal.out" 1785811955.93937 4818 da4e832aae197b52c0a23828a756fadc "pdflatex"
-  "proposal.tex" 1785811953.00859 67394 040235aee267a2ed7c311caee4281d69 ""
-  "proposal.toc" 1785811955.94058 2285 bd3dc1e234688cde7e857e1fa320f5c4 "pdflatex"
+  "proposal.aux" 1785911426.43227 12202 b3a8b1de3216c4cee3b3b9e29778a97c "pdflatex"
+  "proposal.bbl" 1785911424.64298 18710 7fbb7c3594627337e3f12fa1776c1ed4 "bibtex proposal"
+  "proposal.lof" 1785911426.43764 1084 2f352ddcfd836bcc22028d2bb878a787 "pdflatex"
+  "proposal.lot" 1785911426.43764 199 2ce3f3dcb0de2a29352e3bef358d25ba "pdflatex"
+  "proposal.out" 1785911426.43727 4818 da4e832aae197b52c0a23828a756fadc "pdflatex"
+  "proposal.tex" 1785911422.02326 67448 165debd7f7a990f289389a5777fe462b ""
+  "proposal.toc" 1785911426.43764 2285 bd3dc1e234688cde7e857e1fa320f5c4 "pdflatex"
   (generated)
   "proposal.aux"
   "proposal.lof"
