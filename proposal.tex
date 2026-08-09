@@ -225,7 +225,7 @@ Berdasarkan latar belakang yang telah diuraikan, rumusan masalah dalam penelitia
 \end{enumerate}
 
 \section{Hipotesis Penelitian}
-Sebagai jawaban tentatif atas rumusan masalah, berikut adalah hipotesis yang akan diuji dalam peneltiian ini:
+Sebagai jawaban tentatif atas rumusan masalah, berikut adalah hipotesis yang akan diuji dalam peneltian ini:
 \begin{enumerate}
     \item Keberadaan \textit{crack} (Keretakan) pada material pipa akan menurunkan kemungkinan terjadinya interaksi hamburan balik compton. Karena keretakan menandakan adanya massa yang hilang atau kepadatan material. Jumlah dari foton gamma Cs-137 akan lebih sedikit yang
     yang dipantulkan daripada kondisi pipa utuh
@@ -267,7 +267,7 @@ Penelitian inidibatasi pada beberapa aspek untuk menjaga fokus dan kedalaman ana
 \textbf{Batasan parameter dan detektor radiasi}
 
 \begin{enumerate}
-    \item Sumber gamma yang dimodelkan di Geant4 dibatasi hanya berasal dari peluruh Cs-137 dengan energi yang terpancar pada $662 KeV$
+    \item Sumber gamma yang dimodelkan di Geant4 dibatasi hanya berasal dari peluruhan Cs-137 dengan energi yang terpancar pada $662 KeV$
     \item Detektor yang dimodelkan pada Geant4 adalah detektor NaI(Tl) atau Sodium Iodide. Karakteristik penguatan sinyal diasumsikan merepresentasikan
     respon dari \textit{Silicon Photomultiplier} (SiPM) tanpa memperhatikan fluktuasi kelistrikan perangkat keras.
 \end{enumerate}
@@ -458,7 +458,7 @@ sistem inspeksi yang efektif, aman, dan dapat diaplikasikan pada kondisi lapanga
 Metode Monte Carlo merupakan suatu metode komputasional numerik berbasis probabilitas yang menggunakan bilangan acak (\textit{random number}) untuk menyelesaikan masalah matematis dan fisika yang sulit diselesaikan secara analitik \cite{agma2025simulasi}. Metode ini pertama kali dikembangkan pada akhir tahun 1940-an dalam proyek \textit{Manhattan} untuk memodelkan transportasi neutron dan hingga saat ini menjadi salah satu pendekatan utama dalam simulasi interaksi radiasi dengan materi \cite{sood2021neutronics}. Prinsip dasar metode monte carlo adalah melakukan 
 simulasi terhadap sejumlah besar riwayat (\textit{particle histories}) dari setiap individu partikel sehingga karakteristik statistik dari seluruh partikel dapat digunakan untuk memperkirakan besaran yang diinginkan \cite{agma2025simulasi}. Semakin banyak jumlah perulangan simulasinya (\textit{number of histories}), maka nilai ketidakpastian hasil simulasi akan menjadi lebih kecil sehingga akurasi akan meningkat \cite{agma2025simulasi}.
 
-Dalam simulasi monte carlo, lintasan partikel ditentukan oleh probabilitas adanya terjadi interaksi dengan material yang dilewatinya \cite{agma2025simulasi}. Besarnya peluang suatu partikel mengalami interaksi bergantung pada nilai koefisen atenuasi linier ($\mu$) yang berkaitan dengan penampang lintang interaksi (\textit{cross section}) \cite{agma2025simulasi}. Hubungan antara koefisien atenuasi dan panjang lintasana rata-rata (\textit{mean free path}) dinyatakan dengan persamaan berikut
+Dalam simulasi monte carlo, lintasan partikel ditentukan oleh probabilitas adanya terjadi interaksi dengan material yang dilewatinya \cite{agma2025simulasi}. Besarnya peluang suatu partikel mengalami interaksi bergantung pada nilai koefisen atenuasi linier ($\mu$) yang berkaitan dengan penampang lintang interaksi (\textit{cross section}) \cite{agma2025simulasi}. Hubungan antara koefisien atenuasi dan panjang lintasan rata-rata (\textit{mean free path}) dinyatakan dengan persamaan berikut
 \begin{equation}
     \lambda = \frac{1}{\mu}
 \end{equation}
@@ -496,7 +496,7 @@ sekunder yang dihasilkan akibat dari mekanisme interaksi yang terjadi \cite{agma
     \label{fig:Geant4}
 \end{figure}
 
-Pada penelitian ini metode monte carlo digunakan untuk memodelkan sistem detektor keretakan pipa dengan menggunakan prinsip interaksi hamburan balik Compton menggunakan sumber radiasi Cesium-137 dan detektor NaI(TI). Simulasi dilakukan dengan Geant4 untuk memodelkan transport partikel foton gamma dari sumber menuju ke material target yaitu pipa, prose hamburan 
+Pada penelitian ini metode monte carlo digunakan untuk memodelkan sistem detektor keretakan pipa dengan menggunakan prinsip interaksi hamburan balik Compton menggunakan sumber radiasi Cesium-137 dan detektor NaI(TI). Simulasi dilakukan dengan Geant4 untuk memodelkan transport partikel foton gamma dari sumber menuju ke material target yaitu pipa, proses hamburan 
 Compton, hingga foton hamburan diterima oleh detektor. Data hasil simulasi berupa jumlah cacahan foton dan distribusi energi hamburan yang kemudian digunakan sebagai \textit{input} dalam proses rekonstruksi citra tomografi untuk melihat bentuk dan ukuran dari keretakan yang ada di dalam pipa.
 
 % ==========================================
