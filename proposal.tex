@@ -507,7 +507,7 @@ Compton, hingga foton hamburan diterima oleh detektor. Data hasil simulasi berup
 \section{Rancangan Penelitian}
 Penelitian ini dirancang sebagai studi ekspimen kompuatasional kuantitatif untuk mengevaluasi secara sistematis sensitivitas dari metode hamburan balik 
 Compton untuk mendeteksi adanya anomali berupa keretakan (\textit{crack}) pada suatu sistem perpipaan. Rancangan penelitian ini menggunakan \textit{framework} 
-simulasi monte carlo dengan menggunakan \textit{software} Geant4, dimana simulasi fisika (penembakan dan pelakakan partikel foton dari sumber Cesium-137) dijalankan 
+simulasi monte carlo dengan menggunakan \textit{software} Geant4, dimana simulasi fisika (penembakan dan pelacakan partikel foton dari sumber Cesium-137) dijalankan 
 sepenuhnya di dalam lingkungan simulasi Geant4. Kemudian, setelah dilakukan simulasi data hasil pelacakan dieksekusi menggunakan skrip analisis komputasi yaitu CERN ROOT++ 
 \textit{Framework Analysis} yang berbasis C.
 
@@ -523,7 +523,7 @@ sepenuhnya di dalam lingkungan simulasi Geant4. Kemudian, setelah dilakukan simu
 \section{Tempat dan Waktu Penelitian}
 \subsection{Tempat Penelitian}
 sebagian besar eksperimen komputasional dan analisis data dilakukan dengan memanfaatkan fasilitas komputasi dari \textit{High Performance Computer} (HPC) milik kelompok keahlian bidang 
-(KBK) Fisika Komputasi dan Teoriti, Departmene Fisika, Universitas Negeri Malang.
+(KBK) Fisika Komputasi dan Teoriti, Departemen Fisika, Universitas Negeri Malang.
 
 
 \subsection{Waktu Penelitian}
@@ -564,10 +564,10 @@ Penelitian ini dilaksanakan dalam waktu kurun 6 Bulan, dimulai dari bulan Agustu
 
 
 \subsection{\textit{Benchmarking} Simulasi Geant4}
-Tahap awal penelitian dilakukan dengan melakukan proses \textit{bernchmarking} simulasi untuk memvalidasi model simulasi Geant4 daam merepresentasikan respon detektor terhadap
+Tahap awal penelitian dilakukan dengan melakukan proses \textit{bernchmarking} simulasi untuk memvalidasi model simulasi Geant4 dan merepresentasikan respon detektor terhadap
 sumber radiasi gamma sebelum digunakan pada simulasi dengan konfigurasi penuh. Prose validasi ini memiliki tuuan agar model simulasi mampu menghasilkan spektrum energi yang memiliki 
 karkateristik yang sesuai dengan hasil pengukuran eksperimen sehingga model yang dibangun dapat digunakan sebagai gambaran sistem nyata. \textit{Benchmarking} dilakukan dengan sumber 
-radioaktif Cesium-137 yang merupakan sumber radiasi gamma standart yang banyak dgunakan dalam kalibarasi spektrometer gamma.
+radioaktif Cesium-137 yang merupakan sumber radiasi gamma standart yang banyak digunakan dalam kalibarasi spektrometer gamma.
 
 Pada tahap ini dibangun model simulasi menggunakan \textit{software} Geant4 dengan mendefinisikan seluruh komponen geometri sistem deteksi yang digunakan pada proses \textit{benchmarking}, meliputi 
 sumber radiasi, detektor, dan kolimator. material penyusun setiap komponen didefinisikan berdasarkan \textit{database NIST MATERIAL DATABASE} yang tersedia didalam Geant4 sehingga sifat dari 
@@ -601,7 +601,7 @@ Distribusi Gaussian yang digunakan pada proses \textit{smearing} dijelaskan deng
 \end{equation}
 dengan $E_0$ merupakan energi hasil simulasi Geant4, $E$ adalah energi setelah proses \textit{smearing}, dan $\sigma$ adalah standart deviasi dari distribusi Gaussian.
 
-Secara numerik, energi hasil \textit{smearing} diperoleh dengan menambahkan bilangan acak yang mengikuti prinsip distribusi normal ke settiap energi hasil simulasi
+Secara numerik, energi hasil \textit{smearing} diperoleh dengan menambahkan bilangan acak yang mengikuti prinsip distribusi normal ke setiap energi hasil simulasi
 \begin{equation}
     E_{smear} = E + \sigma Z
 \end{equation}
@@ -672,19 +672,19 @@ Dengan $x_i$ dan $y_i$ merupakan koordinat titik pemindauan ke-i. Jumlah keselur
 \begin{equation}
     N_s = N_x \times N_y
 \end{equation}
-dengan $N_p$ merupakan jumlah partkel primer pada setiap titik pemindaian 
+dengan $N_p$ merupakan jumlah partikel primer pada setiap titik pemindaian 
 
-Selama proses simulasi berlangsung, setiap detektor merekan deposisi energi serta jumlah cacahan foton hamburan yang diterima oleh detektor sensitif. informasi tersebut kemudian disimpan sebagai \textit{output} simulasi yang berisi, koordinat pemindaian, \textit{detector id}, jumlah 
+Selama proses simulasi berlangsung, setiap detektor merekam deposisi energi serta jumlah cacahan foton hamburan yang diterima oleh detektor sensitif. informasi tersebut kemudian disimpan sebagai \textit{output} simulasi yang berisi, koordinat pemindaian, \textit{detector id}, jumlah 
 partikel primer, deposisi energi dan jumlah cacahan foton untuk setiap titik pengukuran.
 
-Data hasil pemindaian dari seluruh titk selanjutnya digabung menjad satu basis data (\textit{dataset}) yang digunakan sebaga i\textit{input} pada tahap evaluasi dan analisi. Dataset tersebut menjadi dasar dari proses normalisasi, perhitungan parameter, rekonstruksi untuk mengidentifikasi adanya 
+Data hasil pemindaian dari seluruh titik selanjutnya digabung menjadi satu basis data (\textit{dataset}) yang digunakan sebagai \textit{input} pada tahap evaluasi dan analisi. Dataset tersebut menjadi dasar dari proses normalisasi, perhitungan parameter, rekonstruksi untuk mengidentifikasi adanya 
 keretakan pada pipa
 
 \subsection{Evaluasi dan Analisis data}
 Data hasil simulasi Geant4 berupa koordinat titik pemindaian, identitas detektor, jumlah partikel primer, energi deposisi, dan jumlah cacahan pada setiap detekor terlebih dahulu dijadikan satu dataset untuk memudahkan proses analisis. Seluruh proses pengolahan data dilakukan dengan menggunakan 
 \textit{software} ROOT CERN sehingga diperoleh parameter kuantitatif yang digunakan untuk mengevaluasi respon sistem deteksi terhadap keberadaan keretakan pada pipa.
 
-Tahap awal analisis dilakukan melalui normalisasi jumlah cacahan terhadap jumlah partikel primer untuk menghilangkan pengaruh variasi statistk selama proses simulasi. Nilai cacahan yang dinormalikan dapat dihitung dengan menggunakan
+Tahap awal analisis dilakukan melalui normalisasi jumlah cacahan terhadap jumlah partikel primer untuk menghilangkan pengaruh variasi statistik selama proses simulasi. Nilai cacahan yang dinormalikan dapat dihitung dengan menggunakan
 \begin{equation}
     C_{norm} = \frac{N_{count}}{N_p}
 \end{equation}
@@ -709,7 +709,7 @@ Citra tomografi kemudian direkonstruksi menggunakan metode \textit{backprojectio
 \end{equation}
 dengan $I(x,y)$ merupakan intensitas piksel pada koordinat (x,y), $RD_i$ adalah nilai \textit{Relative Difference} pada titik pemindaian ke-i, sedangkan $W_i(x,y)$ merupakan fungsi pembobot yang menggambarkan kontribusi dari masing - masing titik pemindaian terhadap piksel citra.
 
-Hasil rekonstruksi kemudian dievaluasi berdasarkan distribusi dar intensitas untuk mengidentifikasi dimana lokasi keretakan muncul. Posisi keretakan ditentukan melalui adanya intensitas maksimum (\textit{hotspot}) yang dirumuskan sebagai 
+Hasil rekonstruksi kemudian dievaluasi berdasarkan distribusi dari intensitas untuk mengidentifikasi dimana lokasi keretakan muncul. Posisi keretakan ditentukan melalui adanya intensitas maksimum (\textit{hotspot}) yang dirumuskan sebagai 
 \begin{equation}
     I_{max} = max[I(x,y)]
 \end{equation}
